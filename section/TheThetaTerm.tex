@@ -215,9 +215,112 @@ The integral of $S_\theta$ is:
 \begin{equation}
 I = \int_{T^4} \mathrm{d}^4x E_z \cdot B_z = \int_{T^4} \mathrm{d}x^0 \mathrm{d}x^3 \cdot E_z \cdot \int_{T^4} \mathrm{d}x^1 \mathrm{d}x^2 \cdot B_z
 \end{equation}
-The gauge field $A_\mu$ must be well defined on the underlying torus, which will put restrictions on the allowed values of $E_z$ and $B_z$. So the integral can't take any value.
+The gauge field $A_\mu$ must be well defined on the underlying torus, which will put restrictions on the allowed values of $E_z$ and $B_z$.
+So the integral can't take any value.
 
 Now let consider the restrictions of $A_\mu$ if $A_\mu$ be defined on torus. When a direction of space, say $x^1$, is periodic with radius $R$, the physics state in original point ($x^1=0$) must be identical to the final physics state:
 \begin{equation}
-\text{state}[A_1(0)] = \text{state}[A_1(0)]
+\text{state}[A_1(0)] = \text{state}[A_1(2\mathrm{\pi} R)]
 \end{equation}
+Because $B_z = \partial_2 A_1, (A_2=0) =$ constant, so $A_1 = B_z x^2 + C$. The simplest case is $A_1=0$ but this case is trivial. So we should find a gauge transformations to connect $A(0)$ and $A(2\mathrm{\pi} R)$, which will make two different values of $A_1$ correspond to the same physics state.
+
+\begin{equation}
+A_1(2\mathrm{\pi} R) = A_1(0) + G
+\end{equation}
+let's find the gauge transformation that we are interested:
+\begin{equation}
+A_1 \to A_1 + \partial_1 \chi
+\end{equation}
+We do not insist that $\chi(x)$ is single valued. Instead, we require only that $e^{\mathrm{i}e\chi}$ is single-valued, since this is what acts on the wavefunction. So $\chi$ can have the simple form followed:
+\begin{equation}
+\chi = \frac{n x^1}{e R} \quad \text{with } n \in \mathbb{Z}
+\end{equation}
+Because in the same point ($2\mathrm{\pi} NR + X$), $e^{\mathrm{i}e\chi}$ is the same state:
+
+There are sometimes called large gauge transformations, a name which reflects the fact that they cannot be continuously deformed to the identity. Under such a gauge transformation, we can see that:
+\begin{equation}
+A_1 \to A_1 + \partial_1 \chi = A_1 + \frac{n}{eR}
+\end{equation}
+the two different values of $A_1$ correspond the same physics state. From this transformation, we can determine the expression of $A_1$,
+\begin{equation}
+\begin{aligned}
+A_1(0) &= A_1(2\mathrm{\pi} R) + \frac{n}{eR} \\
+\Rightarrow A_1 &= \frac{n x^2}{2\mathrm{\pi} e R^2}
+\end{aligned}
+\end{equation}
+And we can write down the expression of $B_z$:
+\begin{equation}
+B_z = \partial_2 A_1 = \frac{n}{2\mathrm{\pi} e R^2}
+\end{equation}
+So the integral of magnetic field is:
+\begin{equation}
+\int_{T^2} \mathrm{d}x^1 \mathrm{d}x^2 B_z = \frac{2\mathrm{\pi} n}{e} \quad \text{with } n \in \mathbb{Z}
+\end{equation}
+We can also apply exactly the same argument to the electric field
+\begin{equation}
+E_z = \partial_0 A_3 \quad (A_0 = 0)
+\end{equation}
+So the integral of electric field is:
+\begin{equation}
+\int_{T^2} \mathrm{d}x^0 \mathrm{d}x^3 E_z = \frac{2\mathrm{\pi} n'}{e} \quad \text{with } n' \in \mathbb{Z}
+\end{equation}
+Armed with two integrals above, the $S_\theta$ becomes:
+\begin{equation}
+    \begin{aligned}
+    S_\theta &= -\frac{\theta e^2}{4\mathrm{\pi}^2} \int_{T^4} \mathrm{d}^4x \bm{E} \cdot \bm{B} \\
+    &= -\frac{\theta e^2}{4\mathrm{\pi}^2} \frac{4\mathrm{\pi}^2}{e^2} \cdot n n' \quad (\text{let } N = -nn') \\
+    &= N \theta \quad \text{with } N \in \mathbb{Z}
+    \end{aligned}
+\end{equation}
+
+It's pretty straightforward to generalise it to non-constant $\bm{E}$ and $\bm{B}$ fields:
+
+\begin{equation}
+\begin{aligned}
+\int_{T^2} \mathrm{d}x^1 \mathrm{d}x^2 B_z &= \int_{T^2} \mathrm{d}x^1 \mathrm{d}x^2 \cdot \partial_2 A_1 \\
+&= 2\mathrm{\pi} R [A_1(2\mathrm{\pi} R) - A_1(0)] \\
+&= \frac{2\mathrm{\pi} n}{e}
+\end{aligned}
+\end{equation}
+
+So we can see that $\theta$ is a periodic variable in quantum theory.
+
+Although the theta term is gauge invariant and Lorentz invariant, it is not invariant under certain discrete symmetries, 
+and does not preserve the same symmetries as the Maxwell term. These discrete symmetries are parity $\mathcal{P}$ and time reversal $\mathcal{T}$.
+
+\begin{equation}
+\left\{
+\begin{aligned}
+\mathcal{P}: \bm{x} &\to -\bm{x} \\
+\mathcal{T}: t &\to -t
+\end{aligned}
+\right.
+\end{equation}
+
+If we act on both $\bm{E}$ and $\bm{B}$
+
+\begin{equation}
+\left\{
+\begin{aligned}
+\mathcal{P}: \bm{E}(\bm{x}, t) &\to -\bm{E}(-\bm{x}, t) \text{ and } \mathcal{P}: \bm{B}(\bm{x}, t) \to \bm{B}(-\bm{x}, t) \\
+\mathcal{T}: \bm{E}(\bm{x}, t) &\to \bm{E}(\bm{x}, -t) \text{ and } \mathcal{T}: \bm{B}(\bm{x}, t) \to -\bm{B}(\bm{x}, -t)
+\end{aligned}
+\right.
+\end{equation}
+
+So $\bm{E}$ is odd under parity and even under time reversal. $\bm{B}$ is even under parity and odd under time reversal.
+
+This means that, the theta term $S_\theta \propto \int \mathrm{d}^4x \bm{E} \cdot \bm{B}$ breaks both parity and time reversal invariance, 
+which means $S_\theta \to -S_\theta$ under $\mathcal{P}$ and $\mathcal{T}$. But because of the periodicity of $\theta$, there are two exceptions:
+
+\begin{equation}
+S_\theta = -S_\theta + 2\mathrm{\pi} N
+\end{equation}
+
+In order to make the equation hold for any integer values of $N$, $\theta$ must equal to $0$ or $\mathrm{\pi}$ ($\theta \in [0, 2\mathrm{\pi})$).
+
+So we can know that when $\theta=0$ or $\theta=\mathrm{\pi}$, the theory is invariant under $\mathcal{P}$ and $\mathcal{T}$ symmetries.
+
+In subsequent sections, we can see that the topological insulator said to have a $\mathbb{Z}_2$ classification has $\theta=\mathrm{\pi}$ because these materials are defined to be time-reversal invariant. Most materials have $\theta=0$. But some materials have a band structure which is twisted in a particular way, which results in $\theta=\mathrm{\pi}$.
+
+\subsection{The Witten effect}

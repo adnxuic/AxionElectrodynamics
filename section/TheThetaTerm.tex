@@ -1,0 +1,223 @@
+\section{The theta term and Axion Electrodynamics}
+
+In relativistic notation, the Maxwell action for electromagnetism takes a wonderfully compact form:
+\begin{equation}
+S_{Max} = \int \mathrm{d}^4x -\frac{1}{4} F^{\mu\nu} F_{\mu\nu} = \int \mathrm{d}^4x \frac{1}{2} (\bm{E}^2 - \bm{B}^2)
+\end{equation}
+Here:
+\begin{equation}
+\left\{
+\begin{aligned}
+    F_{\mu\nu} &= \partial_\mu A_\nu - \partial_\nu A_\mu \\
+        & = \begin{pmatrix}
+            0 & -E_x & -E_y & -E_z \\
+            E_x & 0 & -B_z & B_y \\
+            E_y & B_z & 0 & -B_x \\
+            E_z & -B_y & B_x & 0
+            \end{pmatrix}\\
+    E_i &= F_{0i} \\
+    F_{ij} &= -\epsilon_{ijk} B_k
+\end{aligned}
+\right.
+\end{equation}
+One reason that the Maxwell action is so simple is that there is very little else we can write down that is both gauge invariant and Lorentz invariant. 
+There is, however one term that we can add to the Maxwell action is also both gauge invariant and Lorentz invariant, which we call it theta term:
+\begin{equation}
+S_\theta = \frac{\theta e^2}{4\mathrm{\pi}^2} \int \mathrm{d}^4x \frac{1}{4} {}^\star F^{\mu\nu} F_{\mu\nu} = -\frac{\theta e^2}{4\mathrm{\pi}^2} \int \mathrm{d}^4x \bm{E} \cdot \bm{B}
+\end{equation}
+which ${}^\star F^{\mu\nu}$ is the dual tensor:
+\begin{equation}
+    \begin{aligned}
+    {}^\star F^{\mu\nu} &= \frac{1}{2} \epsilon^{\mu\nu\rho\sigma} F_{\rho\sigma} \\
+    &= \begin{pmatrix}
+        0 & -B_x & -B_y & -B_z \\
+        B_x & 0 & E_z & -E_y \\
+        B_y & -E_z & 0 & E_x \\
+        B_z & E_y & -E_x & 0
+        \end{pmatrix}
+\end{aligned}
+\end{equation}
+and $\theta$ is a constant parameter.
+
+However, the theta term is simple to check that it can be written as a total derivative:
+\begin{equation}
+\begin{aligned}
+\int \mathrm{d}^4x \frac{1}{4} {}^\star F^{\mu\nu} F_{\mu\nu} &= \frac{1}{2} \int \mathrm{d}^4x \cdot \frac{1}{4} \epsilon^{\mu\nu\rho\sigma} F_{\rho\sigma} F_{\mu\nu} \\
+&= \frac{1}{8} \int \mathrm{d}^4x \cdot \epsilon^{\mu\nu\rho\sigma} (\partial_\rho A_\sigma - \partial_\sigma A_\rho) (\partial_\mu A_\nu - \partial_\nu A_\mu) \\
+&= \frac{1}{2} \int \mathrm{d}^4x \cdot \epsilon^{\mu\nu\rho\sigma} (\partial_\mu A_\nu \partial_\rho A_\sigma)
+\end{aligned}
+\end{equation}
+Now let's proof a useful equation:
+\begin{equation}
+\epsilon^{\mu\nu\rho\sigma} A_\nu \partial_\mu \partial_\rho A_\sigma = 0
+\end{equation}
+Because:
+\begin{equation}
+\begin{aligned}
+\epsilon^{\mu\nu\rho\sigma} A_\nu \partial_\mu \partial_\rho A_\sigma &= \epsilon^{\rho\nu\mu\sigma} A_\nu \partial_\rho \partial_\mu A_\sigma \\
+&= \epsilon^{\rho\nu\mu\sigma} A_\nu \partial_\mu \partial_\rho A_\sigma \\
+&= -\epsilon^{\mu\nu\rho\sigma} A_\nu \partial_\mu \partial_\rho A_\sigma
+\end{aligned}
+\end{equation}
+So we can get:
+\begin{equation}
+2\epsilon^{\mu\nu\rho\sigma} A_\nu \partial_\mu \partial_\rho A_\sigma = 0 \Rightarrow \epsilon^{\mu\nu\rho\sigma} A_\nu \partial_\mu \partial_\rho A_\sigma = 0
+\end{equation}
+
+So the quadratic part of theta term become:
+\begin{equation}
+\begin{aligned}
+\int \mathrm{d}^4x \frac{1}{4} {}^\star F^{\mu\nu} F_{\mu\nu} &= \frac{1}{2} \int \mathrm{d}^4x \epsilon^{\mu\nu\rho\sigma} (\partial_\mu A_\nu \partial_\rho A_\sigma + A_\nu \partial_\mu \partial_\rho A_\sigma) \\
+&= \frac{1}{2} \int \mathrm{d}^4x \epsilon^{\mu\nu\rho\sigma} \partial_\mu (A_\nu \partial_\rho A_\sigma)
+\end{aligned}
+\end{equation}
+The total derivative form of theta term is:
+\begin{equation}
+S_\theta = \frac{\theta e^2}{8\mathrm{\pi}^2} \int \mathrm{d}^4x \partial_\mu (\epsilon^{\mu\nu\rho\sigma} A_\nu \partial_\rho A_\sigma)
+\end{equation}
+We say that the theta term is topological. It depends only on boundary information. 
+However, when deriving using the principle of least action to derive the field's equation of motion, 
+the values of field are fixed on the infinite boundary. 
+Therefore, the upshot is that the theta term does not change the equations of motion and, it would seem, can have little effect on the physics.
+
+But under some situations that involve subtle interplay between quantum mechanics and topology, 
+there are a number of interesting phenomena of physics which are led by theta term.
+
+Also, we can look at the situations where $\theta$ affects the dynamics classically. This occurs when $\theta$ is not constant, but instead varies in space and time.
+
+\begin{equation}
+\theta = \theta(\bm{x}, t)
+\end{equation}
+
+So we can write down the axion electrodynamics action:
+\begin{equation}
+S = \int \mathrm{d}^4x (-\frac{1}{4} F^{\mu\nu} F_{\mu\nu} + \frac{e^2}{16\mathrm{\pi}^2} \theta(\bm{x}, t) {}^\star F^{\mu\nu} F_{\mu\nu})
+\end{equation}
+
+We use Euler-Lagrange equations:
+\begin{equation}
+\frac{\partial \mathcal{L}}{\partial A_\mu} - \partial_\nu (\frac{\partial \mathcal{L}}{\partial (\partial_\nu A_\mu)}) = 0
+\end{equation}
+
+to get the equations of axion electrodynamics
+
+Because $\mathcal{L}$ doesn't depend on $A_\mu$, so the equations of motion are:
+\begin{equation}
+\frac{\partial \mathcal{L}}{\partial A_\mu} = 0 \Rightarrow \partial_\nu [\frac{\partial \mathcal{L}}{\partial (\partial_\nu A_\mu)}] = 0
+\end{equation}
+
+and the $\mathcal{L}$ of axion electrodynamics is $(\alpha = \frac{e^2}{4\mathrm{\pi}})$:
+\begin{equation}
+\begin{aligned}
+\mathcal{L} &= \mathcal{L}_{Max} + \mathcal{L}_\theta \\
+&= -\frac{1}{4} F^{\mu\nu} F_{\mu\nu} + \frac{\alpha}{4\mathrm{\pi}} \theta(\bm{x}, t) {}^\star F^{\mu\nu} F_{\mu\nu}
+\end{aligned}
+\end{equation}
+
+First, let's see $\mathcal{L}_\theta$:
+\begin{equation}
+\begin{aligned}
+\frac{\partial \mathcal{L}}{\partial (\partial_\nu A_\mu)} &= \frac{\partial}{\partial (\partial_\nu A_\mu)} \cdot \frac{\alpha}{4\mathrm{\pi}} \theta(\bm{x}, t) \cdot \frac{1}{2} \epsilon^{\alpha\beta\rho\sigma} F_{\alpha\beta} F_{\rho\sigma} \\
+&= \frac{\alpha}{8\mathrm{\pi}} \{ [\frac{\partial}{\partial (\partial_\nu A_\mu)} \theta(\bm{x}, t)] \cdot \epsilon^{\alpha\beta\rho\sigma} F_{\alpha\beta} F_{\rho\sigma} + \theta(\bm{x}, t) [\frac{\partial \epsilon^{\alpha\beta\rho\sigma} F_{\alpha\beta} F_{\rho\sigma}}{\partial (\partial_\nu A_\mu)}] \}
+\end{aligned}
+\end{equation}
+
+let's see the first term:
+\begin{equation}
+\epsilon^{\alpha\beta\rho\sigma} F_{\alpha\beta} F_{\rho\sigma} \frac{\partial}{\partial (\partial_\nu A_\mu)} \theta(\bm{x}, t) = 0
+\end{equation}
+
+then let's see the second term:
+\begin{equation}
+\begin{aligned}
+\theta(\bm{x}, t) \cdot \frac{\partial}{\partial (\partial_\nu A_\mu)} \cdot \epsilon^{\alpha\beta\rho\sigma} F_{\alpha\beta} F_{\rho\sigma} &= 4 \theta(\bm{x}, t) (\frac{\partial}{\partial (\partial_\nu A_\mu)} \partial_\alpha A_\beta \partial_\rho A_\sigma) \epsilon^{\alpha\beta\rho\sigma} \\
+&= 4 \theta(\bm{x}, t) (\delta^\nu_\alpha \delta^\mu_\beta \partial_\rho A_\sigma + \delta^\nu_\rho \delta^\mu_\sigma \partial_\alpha A_\beta) \cdot \epsilon^{\alpha\beta\rho\sigma} \\
+&= 4 \theta(\bm{x}, t) \cdot \epsilon^{\nu\mu\rho\sigma} (\partial_\rho A_\sigma - \partial_\sigma A_\rho) \\
+&= 8 \theta(\bm{x}, t) {}^\star F^{\nu\mu}
+\end{aligned}
+\end{equation}
+
+next, we can get:
+\begin{equation}
+\partial_\nu [\theta(\bm{x}, t) {}^\star F^{\nu\mu}] = {}^\star F^{\nu\mu} \partial_\nu \theta(\bm{x}, t) + \theta(\bm{x}, t) \cdot \partial_\nu {}^\star F^{\nu\mu}
+\end{equation}
+
+using the Bianchi identities:
+\begin{equation}
+\partial_\mu {}^\star F^{\mu\nu} = 0
+\end{equation}
+
+so we can get:
+\begin{equation}
+\partial_\nu \theta(\bm{x}, t) {}^\star F^{\nu\mu} = {}^\star F^{\nu\mu} \partial_\nu \theta(\bm{x}, t)
+\end{equation}
+
+Finally, we can get:
+\begin{equation}
+\partial_\nu [\frac{\partial \mathcal{L}_\theta}{\partial (\partial_\nu A_\mu)}] = \frac{\alpha}{\mathrm{\pi}} {}^\star F^{\nu\mu} \cdot \partial_\nu \theta(\bm{x}, t)
+\end{equation}
+
+And the Lagrangian of Maxwell part:
+\begin{equation}
+\partial_\nu [\frac{\partial \mathcal{L}_{Max}}{\partial (\partial_\nu A_\mu)}] = - \partial_\nu F^{\nu\mu}
+\end{equation}
+
+So the equations of axion electrodynamics is:
+\begin{equation}
+\left\{
+\begin{aligned}
+\partial_\nu F^{\nu\mu} &= \frac{\alpha}{\mathrm{\pi}} {}^\star F^{\nu\mu} \cdot \partial_\nu \theta(\bm{x}, t) \\
+\partial_\mu {}^\star F^{\mu\nu} &= 0
+\end{aligned}
+\right.
+\end{equation}
+
+In the end, the deformed Maxwell equations which are the equations of axion electrodynamics are:
+\begin{equation}
+\left\{
+\begin{aligned}
+\nabla \cdot \bm{E} &= \frac{\alpha}{\mathrm{\pi}} (\nabla \theta) \cdot \bm{B} \\
+\nabla \times \bm{B} &= \frac{\partial \bm{E}}{\partial t} - \frac{\alpha}{\mathrm{\pi}} (\dot{\theta} \bm{B} + \nabla \theta \times \bm{E}) \\
+\nabla \cdot \bm{B} &= 0 \\
+\nabla \times \bm{E} &= - \frac{\partial \bm{B}}{\partial t}
+\end{aligned}
+\right.
+\end{equation}
+
+The first equation tells us that in regions of space where $\theta$ varies, a magnetic field $\bm{B}$ acts like an electric charge density. The second equation tells us that the combination $(\dot{\theta}\bm{B} + \nabla\theta \times \bm{E})$ acts like a current density
+
+\subsection{The periodicity of theta and its values under Parity or Time - Reversal Symmetry}
+
+In quantum theory, $\theta$ is a periodic variable: it lies in the range:
+\begin{equation}
+\theta \in [0, 2\mathrm{\pi})
+\end{equation}
+After imposing appropriate boundary conditions, $S_\theta$ can only take values of the form:
+\begin{equation}
+S_\theta = \theta N \quad \text{with } N \in \mathbb{Z}
+\end{equation}
+This means that the theta angle contributes to the partition function as
+\begin{equation}
+e^{\mathrm{i}S_\theta} = e^{\mathrm{i}N\theta}
+\end{equation}
+To show that $S_\theta$ must take the form, we consider a compact Euclidean spacetime which we take to $T^4$ and we take each of the circles in the torus to have radii $R$.
+
+We consider easy case:
+\begin{equation}
+\left\{
+\begin{aligned}
+\bm{E} &= (0, 0, E_z), \ E_z = F_{03} = \partial_0 A_3 - \partial_3 A_0 \\
+\bm{B} &= (0, 0, B_z), \ B_z = F_{21} = \partial_2 A_1 - \partial_1 A_2
+\end{aligned}
+\right.
+\end{equation}
+The integral of $S_\theta$ is:
+\begin{equation}
+I = \int_{T^4} \mathrm{d}^4x E_z \cdot B_z = \int_{T^4} \mathrm{d}x^0 \mathrm{d}x^3 \cdot E_z \cdot \int_{T^4} \mathrm{d}x^1 \mathrm{d}x^2 \cdot B_z
+\end{equation}
+The gauge field $A_\mu$ must be well defined on the underlying torus, which will put restrictions on the allowed values of $E_z$ and $B_z$. So the integral can't take any value.
+
+Now let consider the restrictions of $A_\mu$ if $A_\mu$ be defined on torus. When a direction of space, say $x^1$, is periodic with radius $R$, the physics state in original point ($x^1=0$) must be identical to the final physics state:
+\begin{equation}
+\text{state}[A_1(0)] = \text{state}[A_1(0)]
+\end{equation}

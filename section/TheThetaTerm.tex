@@ -323,4 +323,216 @@ So we can know that when $\theta=0$ or $\theta=\mathrm{\pi}$, the theory is inva
 
 In subsequent sections, we can see that the topological insulator said to have a $\mathbb{Z}_2$ classification has $\theta=\mathrm{\pi}$ because these materials are defined to be time-reversal invariant. Most materials have $\theta=0$. But some materials have a band structure which is twisted in a particular way, which results in $\theta=\mathrm{\pi}$.
 
+\subsection{Continuity Conditions}
+
+Let's consider a equivalent way to describing the physics above. We introduce the electric displacement:
+\begin{equation}
+\bm{D} = \bm{E} - \frac{\alpha \theta}{\uppi} \cdot \bm{B}
+\end{equation}
+because the divergence of $\bm{B}$ equal to zero, so:
+\begin{equation}
+\nabla \bm{D} = \nabla \bm{E} - \frac{\alpha}{\uppi} (\nabla \cdot \theta) \bm{B} = 0.
+\end{equation}
+Comparing to the expression of $\bm{D}$, we see that a magnetic field $\bm{B}$ act like polarisation in a topological insulator. When the $\theta$ varies, we have a varying polarisation resulting in bound charge. Similarly, we define the magnetising field
+\begin{equation}
+\bm{H} = \bm{B} + \frac{\alpha}{\uppi} \theta \cdot \bm{E}
+\end{equation}
+Using the relationship between $\bm{B}$ and $\bm{E}$:
+\begin{equation}
+\frac{\partial \bm{B}}{\partial t} + \nabla \times \bm{E} = 0
+\end{equation}
+
+so we can get:
+\begin{equation}
+\begin{aligned}
+\nabla \times \bm{H} &= \nabla \times \bm{B} + \frac{\alpha}{\uppi} [ (\nabla \theta) \times \bm{E} + \theta (\nabla \times \bm{E}) ] \\
+&= \frac{\partial \bm{D}}{\partial t} + \frac{\alpha}{\uppi} \theta \cdot (\frac{\partial \bm{B}}{\partial t} + \nabla \times \bm{E}) \\
+&= \frac{\partial \bm{D}}{\partial t}
+\end{aligned}
+\end{equation}
+In topological insulator, $\bm{E}$ act like magnetisation. When $\theta$ varies, we get a varying magnetisation which results in bound currents.
+
+With these definitions, the equations of axion electrodynamics take the usual form of Maxwell equations in matter:
+\begin{equation}
+\left\{
+\begin{aligned}
+&\nabla \cdot \bm{D} = 0 \\
+&\nabla \times \bm{H} - \frac{\partial \bm{D}}{\partial t} = 0 \\
+&\nabla \cdot \bm{B} = 0 \\
+&\frac{\partial \bm{B}}{\partial t} + \nabla \times \bm{E} = 0
+\end{aligned}
+\right.
+\end{equation}
+This means that if we introduce the normal vector to the surface $\bm{\hat{n}}$, we have the boundary conditions:
+\begin{equation}
+\left\{
+\begin{aligned}
+&\bm{\hat{n}} \cdot \Delta \bm{D} = 0 \\
+&\bm{\hat{n}} \times \Delta \bm{E} = 0 \\
+&\bm{\hat{n}} \cdot \Delta \bm{B} = 0 \\
+&\bm{\hat{n}} \times \Delta \bm{H} = 0
+\end{aligned}
+\right.
+\end{equation}
+
 \subsection{The Witten effect}
+
+The effect of the $\theta$ term is to endow the magnetic monopole with an electric charge, which is known as the Witten effect
+
+Let's take a magnetic monopole with magnetic charge $g$ and place in inside a vacuum ($\theta=0$). Then, we surround this with a medium that has $\theta = \Theta \neq 0$
+
+When the magnetic field crosses the interface where $\theta$ changes, it will induce an electric charge:
+\begin{equation}
+\begin{aligned}
+&\int \nabla \cdot \bm{E} \mathrm{d} v = \int \frac{\alpha}{\uppi} (\nabla \cdot \theta) \cdot \bm{B} \mathrm{d} v. \\
+&\Rightarrow \quad Q \quad = \frac{\alpha}{\uppi} \Theta g
+\end{aligned}
+\end{equation}
+This result is independent of the size of the interior region whose $\theta$ is zero. So we could shrink this region down until it is infinitesimally small, and we still find that the monopole has charge $q$: In fact a monopole is a dyon which carries electric charge when $\theta$ not equal to zero.
+
+When the monopole carries the minimum allowed magnetic charge, its electric charge is given by:
+\begin{equation}
+g = \frac{2 \uppi}{e} \Rightarrow q = \frac{e \theta}{2 \uppi}
+\end{equation}
+In particular, if we place a magnetic monopole inside a topological insulator, it turns into a dyon which carries half the charge of the electron.
+
+We can also consider placing a monopole in a medium whose $\theta$ will gradually increase from zero. At the end of this process, the final electric field will be:
+\begin{equation}
+\begin{aligned}
+&\int_0^{t_0} \frac{\partial \bm{E}}{\partial t} \mathrm{d} t = \frac{\alpha}{\uppi} \int_0^{t_0} \dot{\theta} \bm{B} \\
+&\Rightarrow \quad \bm{E} \quad = \frac{\alpha}{\uppi} \Theta \bm{B} \quad [\text{which } \theta(t_0)=\Theta] \\
+&\Rightarrow \quad q \quad = \frac{\alpha}{\uppi} \Theta g
+\end{aligned}
+\end{equation}
+
+\subsection{A Mirage Monopole}
+
+let's consider that we take an electric charge $q$ and place it in the vacuum at point $\bm{x}=(0,0,d)$. the we fill the region where $z$ is less than zero with topological insulator. We can see that the effect produced by surface charge is equivalent to placing mirror dyons at point $\bm{x}=(0,0,d)$ and point $\bm{x}'=(0,0,-d)$.
+
+We assume that the mirror dyon sitting at $\bm{x}=(0,0,d)$ with electric and magnetic charge $(q_1, g_1)$ and the mirror dyon sitting at $\bm{x}'=(0,0,-d)$ with electric and magnetic charge $(q_2, g_2)$.
+
+Next, we can write down:
+\begin{equation}
+\left\{
+\begin{aligned}
+&\bm{E} = -\nabla \phi \quad (\text{because } \nabla \times \bm{E} = 0) \\
+&\bm{B} = -\nabla \Omega \quad (\text{because } \nabla \times \bm{B} = 0)
+\end{aligned}
+\right.
+\end{equation}
+
+So the electric potential in the two regions is:
+\begin{equation}
+\left\{
+\begin{aligned}
+&\phi_+ = \frac{1}{4\uppi} \left[ \frac{q}{\sqrt{x^2+y^2+(z-d)^2}} + \frac{q_2}{\sqrt{x^2+y^2+(z+d)^2}} \right] , & z > 0 \\
+&\phi_- = \frac{1}{4\uppi} \frac{q+q_1}{\sqrt{x^2+y^2+(z-d)^2}} , & z < 0
+\end{aligned}
+\right.
+\end{equation}
+
+We only need to consider the electric and magnetic field in yz plane because of symmetry, where $z$ equal to zero
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & \left. 
+        \begin{aligned}
+            E_y^+ &= -\partial_y \phi_+ = \frac{q+q_2}{4\pi} \cdot \frac{y}{(x^2+y^2+d^2)^{\frac{3}{2}}} \\
+            E_z^+ &= -\partial_z \phi_+ = \frac{q_2-q}{4\pi} \cdot \frac{d}{(x^2+y^2+d^2)^{\frac{3}{2}}}
+        \end{aligned} 
+        \right\} z=0^+ \\[10pt]
+        & \left. 
+        \begin{aligned}
+            E_y^- &= -\partial_y \phi_- = \frac{q+q_1}{4\pi} \cdot \frac{y}{(x^2+y^2+d^2)^{\frac{3}{2}}} \\
+            E_z^- &= -\partial_z \phi_- = \frac{-(q+q_1)}{4\pi} \cdot \frac{d}{(x^2+y^2+d^2)^{\frac{3}{2}}}
+        \end{aligned} 
+        \right\} z=0^-
+    \end{aligned}
+    \right.
+\end{equation}
+
+Using the boundary conditions:
+\begin{equation}
+\bm{\hat{n}} \times \bm{E} = 0
+\end{equation}
+
+so we can get the equation:
+\begin{equation}
+E_y^+ = E_y^- \Rightarrow q_1 = q_2 = q'
+\end{equation}
+
+Also, we can perform the same operation on the magnetic field;
+The magnetic scalar potential is:
+\begin{equation}
+\left\{
+\begin{aligned}
+&\Omega_+ = \frac{1}{4\uppi} \cdot \frac{g_2}{\sqrt{x^2+y^2+(z+d)^2}} , & z > 0 \\
+&\Omega_- = \frac{1}{4\uppi} \cdot \frac{g_1}{\sqrt{x^2+y^2+(z-d)^2}} , & z < 0
+\end{aligned}
+\right.
+\end{equation}
+
+So the magnetic field on yz plane where $z$ equal to zero:
+\begin{equation}
+    \left\{
+    \begin{aligned}
+        & \left. 
+        \begin{aligned}
+            B_y^+ &= -\partial_y \Omega_+ = \frac{g_2}{4\pi} \cdot \frac{y}{(x^2+y^2+d^2)^{\frac{3}{2}}} \\
+            B_z^+ &= -\partial_z \Omega_+ = \frac{g_2}{4\pi} \cdot \frac{d}{(x^2+y^2+d^2)^{\frac{3}{2}}}
+        \end{aligned} 
+        \right\} z=0^+ \\[10pt]
+        & \left. 
+        \begin{aligned}
+            B_y^- &= -\partial_y \Omega_- = \frac{g_1}{4\pi} \cdot \frac{y}{(x^2+y^2+d^2)^{\frac{3}{2}}} \\
+            B_z^- &= -\partial_z \Omega_- = \frac{-g_1}{4\pi} \frac{d}{(x^2+y^2+d^2)^{\frac{3}{2}}}
+        \end{aligned} 
+        \right\} z=0^-
+    \end{aligned}
+    \right.
+\end{equation}
+
+Using the boundary conditions:
+\begin{equation}
+\bm{\hat{n}} \cdot \bm{B} = 0 \Rightarrow B_z^- = B_z^+ \Rightarrow g_2 = -g_1 = g
+\end{equation}
+
+From the expression above, we can get the electric displacement:
+\begin{equation}
+\left\{
+\begin{aligned}
+&D_z^+ = E_z^+ = \frac{q'-q}{4\uppi} \cdot \frac{d}{(x^2+y^2+d^2)^{\frac{3}{2}}} \\
+&D_z^- = E_z^- - \frac{\alpha}{\uppi} \theta B_z^- = \frac{-(q+q')+\alpha g}{4\uppi} \cdot \frac{d}{(x^2+y^2+d^2)^{\frac{3}{2}}}
+\end{aligned}
+\right.
+\end{equation}
+
+Using the boundary conditions:
+\begin{equation}
+\bm{\hat{n}} \cdot \bm{D} = 0 \Rightarrow D_z^+ = D_z^- \Rightarrow g = \frac{-2q'}{\alpha}
+\end{equation}
+
+The magnetising field:
+\begin{equation}
+\left\{
+\begin{aligned}
+&H_y^+ = B_y^+ = \frac{g}{4\uppi} \cdot \frac{y}{(x^2+y^2+d^2)^{\frac{3}{2}}} \\
+&H_y^- = B_y^- + \frac{\alpha}{\uppi} \theta E_y^- = \frac{-g+\alpha(q+q')}{4\uppi} \frac{y}{(x^2+y^2+d^2)^{\frac{3}{2}}}
+\end{aligned}
+\right.
+\end{equation}
+
+Using the boundary condition:
+\begin{equation}
+\nabla \times \bm{H} = 0 \Rightarrow H_y^+ = H_y^- \Rightarrow g = \frac{\alpha(q+q')}{2}
+\end{equation}
+
+Finally, we can get the electric and magnetic charges carried by these dyons:
+\begin{equation}
+\left\{
+\begin{aligned}
+&q' = \frac{-\alpha^2}{4+\alpha^2} \cdot q \\
+&g = \frac{2\alpha}{4+\alpha^2} \cdot q
+\end{aligned}
+\right.
+\end{equation}

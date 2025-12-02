@@ -1,0 +1,58 @@
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        % --- 定义半径 ---
+        \def\rInner{2.0} % 内圆半径
+        \def\rOuter{4.0} % 外圆半径
+        \def\dotSize{0.25} % 中心点半径
+        \def\arrowOffset{0.15} % 红色箭头相对于蓝色箭头的偏移量
+
+        % --- 绘制区域 ---
+        % 1. 外圈 (灰色背景)
+        \filldraw[fill=gray!10, draw=black] (0,0) circle (\rOuter);
+        
+        % 2. 内圈 (白色背景)
+        \filldraw[fill=white, draw=black] (0,0) circle (\rInner);
+
+        % --- 绘制边界上的正电荷 (新增部分) ---
+        % 在内圆圆周上均匀分布 "+" 符号
+        % 向外移动一点 (rInner + 0.25)，去掉 fill=white
+        \foreach \angle in {0, 22.5, ..., 337.5} {
+            \node[red, font=\small\bfseries, inner sep=0.5pt] at (\angle:\rInner + 0.25) {+};
+        }
+
+        % --- 绘制中心粒子 ---
+        \fill[blue] (0,0) circle (\dotSize);
+
+        % --- 绘制矢量场 (循环8个方向) ---
+        \foreach \angle in {0, 45, ..., 315} {
+            
+            % --- 蓝色矢量 (B场) ---
+            % 从中心点边缘出发，延伸到接近外圆边缘
+            \draw[blue, -{Stealth[length=3mm, width=2mm]}] 
+                (\angle:\dotSize) -- (\angle:3.5);
+
+            % --- 红色矢量 (E场) ---
+            % 只在外圈存在，从内圆边界出发
+            % 偏移逻辑：($ coordinate + (angle-90:offset) $) 
+            % 这样可以确保红色箭头始终位于蓝色箭头的"右侧" (顺时针侧)
+            \draw[red, -{Stealth[length=3mm, width=2mm]}] 
+                ($(\angle:\rInner) + (\angle-90:\arrowOffset)$) -- 
+                ($(\angle:3.5) + (\angle-90:\arrowOffset)$);
+        }
+
+        % --- 添加文字标签 ---
+        
+        % 区域标签
+        % 向右移动避开正上方的箭头，放在约 70 度方向
+        \node at (75:3.3) [fill=gray!10, inner sep=2pt] {\large $\theta \neq 0$};
+        \node at (45:1.0) {\large $\theta=0$};
+
+        % 场标签 (B 和 E) - 放在顶部的箭头旁边
+        \node[blue] at (95:2.5) {\Large B};
+        \node[red]  at (85:2.5) {\Large E};
+
+    \end{tikzpicture}
+    \caption{Witten Effect}
+    \label{fig: Witten Effect}
+\end{figure}

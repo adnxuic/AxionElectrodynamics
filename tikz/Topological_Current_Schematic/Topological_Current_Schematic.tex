@@ -1,0 +1,126 @@
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[
+        x={(-0.5cm,-0.3cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, % 3D坐标系
+        scale=2,
+        >=Stealth,
+        font=\sffamily
+    ]
+
+        % --- 参数设置 ---
+        \def\w{3.0} % 宽度 (y轴)
+        \def\d{2.0} % 深度 (x轴)
+        \def\h{1.2} % 高度 (z轴)
+        
+        % 颜色定义
+        \definecolor{materialcolor}{RGB}{230, 230, 235} % 浅灰材料色
+        \definecolor{efieldcolor}{RGB}{220, 50, 50}     % 电场红
+        \definecolor{currentcolor}{RGB}{255, 140, 0}    % 电流橙色
+
+        % 定义中间箭头的样式
+        \tikzset{->-/.style={decoration={
+        markings,
+        mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
+
+        % --- 1. 背景电场 (Background E Field) ---
+        % 绘制在材料后方/下方的电场线，衬托整体环境
+        \foreach \iz in {0.2, 0.6, 1.0} {
+            % 在 x=0 平面后方一点
+            \draw[efieldcolor, thin, opacity=0.3] (0, -1.0, \iz) -- (0, 0, \iz);
+        }
+        % 在材料左侧(y<0)的延伸
+        \foreach \ix in {0.5, 1.5} {
+            \foreach \iz in {0.4, 0.8} {
+                \draw[efieldcolor, thin, opacity=0.3] (\ix, -1.0, \iz) -- (\ix, 0, \iz);
+            }
+        }
+
+        % --- 2. 绘制立方体后/底/左面 (被遮挡面) ---
+        % 顶点定义
+        \coordinate (O) at (0,0,0);
+        \coordinate (A) at (\d,0,0);
+        \coordinate (B) at (\d,\w,0);
+        \coordinate (C) at (0,\w,0);
+        \coordinate (D) at (0,0,\h);
+        \coordinate (E) at (\d,0,\h);
+        \coordinate (F) at (\d,\w,\h);
+        \coordinate (G) at (0,\w,\h);
+
+        % 后棱 (虚线)
+        \draw[dashed, gray!60] (O) -- (C);
+        \draw[dashed, gray!60] (C) -- (G);
+        \draw[dashed, gray!60] (C) -- (B);
+
+        % 填充底层面 (Bottom & Left)
+        \fill[materialcolor, opacity=0.8] (O) -- (A) -- (B) -- (C) -- cycle; % 底面
+        \fill[materialcolor, opacity=0.6] (O) -- (A) -- (E) -- (D) -- cycle; % 左侧面
+
+        % --- 3. 内部电场 (Inside E Field) ---
+        % **关键步骤**：在画前表面之前画内部线，产生“被包裹”的透视感
+        \foreach \ix in {0.5, 1.0, 1.5} { % 沿x轴分布
+            \foreach \iz in {0.4, 0.8} {   % 沿z轴分布
+                % 绘制贯穿内部的线，改为 dashed (虚线)
+                \draw[efieldcolor, thick, dashed, opacity=0.8] (\ix, 0, \iz) -- (\ix, \w, \iz);
+                % 绘制穿出体外的部分，改为实线 (solid) 并带箭头
+                \draw[efieldcolor, thick, ->] (\ix, \w, \iz) -- (\ix, \w+1.0, \iz);
+            }
+        }
+
+        % --- 4. 绘制立方体前/顶面 (Front & Top) ---
+        % 前侧面 (Front Face) - 设为半透明，让步骤3的线透出来
+        \fill[materialcolor, opacity=0.4] (A) -- (B) -- (F) -- (E) -- cycle; 
+        
+        % 顶面 (Top Face) - 不透明度稍高，承载表面电流
+        \fill[materialcolor, opacity=0.9] (D) -- (E) -- (F) -- (G) -- cycle; 
+
+        % 绘制边框线条
+        \draw[thick, gray!80] (O) -- (A) -- (B); 
+        \draw[thick, gray!80] (O) -- (D); 
+        \draw[thick, gray!80] (A) -- (E); 
+        \draw[thick, gray!80] (B) -- (F); 
+        \draw[thick, gray!80] (D) -- (E) -- (F) -- (G) -- cycle; 
+
+        % --- 5. 表面效应 (Surface Current) ---
+        \foreach \iy in {0.5, 1.5, 2.5} {
+            \draw[currentcolor, ultra thick, ->] (0.2, \iy, \h) -- (\d-0.2, \iy, \h);
+        }
+        
+        % --- 6. 顶部/外部电场 (External E Field) ---
+        % 在材料上方绘制多条电场线
+        \def\zoffset{\h + 0.6}
+        \foreach \ix in {0.5, 1.5} {
+            % 第一层上方
+            \draw[efieldcolor, thick, ->] (\ix, -0.8, \zoffset) -- (\ix, \w+0.5, \zoffset);
+            % 第二层上方
+            \draw[efieldcolor, thick, ->] (\ix, -0.8, \zoffset + 0.6) -- (\ix, \w+0.5, \zoffset + 0.6);
+        }
+        \node[efieldcolor, right] at (1.5, \w+0.5, \zoffset) {$\mathbf{E}$};
+
+        % --- 7. 标注与文字 ---
+        \node[anchor=south west, gray!60, scale=0.8] at (0,0,0) {Topological Material};
+        \node at (\d/2, \w/2, \h+0.85) {Vacuum ($\theta = 0$)};
+        
+        % θ=π 标签
+        \node[scale=0.9] at (\d/2, \w/2, \h/2 + 0.2) {\large $\theta = \pi$};
+
+        % --- Surface Current 标签修改 ---
+        % 移到左侧 (y < 0)
+        % 从靠近左边缘的一条电流线 (y=0.5) 引出，向左延伸
+        % 修改：将引线的终点和标签的位置从 y=-1.5 改为 y=-0.5，使其更靠近箭头
+        % \draw[currentcolor, thin] (1.0, 0.5, \h) -- (1.0,0, \h); 
+        \node[anchor=east, align=right, scale=0.9] at (1.0,0, \h) {
+            \textcolor{currentcolor}{\textbf{Surface Current}} \\
+            $K = \frac{\alpha c}{\pi} (\partial_z \theta) E_y$
+        };
+
+        % 坐标轴指示
+        \begin{scope}[shift={(3.5, 0, 0)}] 
+            \draw[->, thick, black!70] (0, 0, 0) -- (0, 0.6, 0) node[right, scale=0.8] {$y (\mathbf{E})$};
+            \draw[->, thick, black!70] (0, 0, 0) -- (0, 0, 0.6) node[above, scale=0.8] {$z$};
+            \draw[->, thick, black!70] (0, 0, 0) -- (0.6, 0, 0) node[below left, scale=0.8] {$x (\mathbf{K})$};
+        \end{scope}
+
+    \end{tikzpicture}
+    \caption{Topological Current Schematic}
+    \label{fig:topological_current_schematic}
+\end{figure}

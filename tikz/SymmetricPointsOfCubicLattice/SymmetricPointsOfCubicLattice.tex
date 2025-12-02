@@ -1,0 +1,108 @@
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[
+        % 设置3D投影视角，使得x轴指向左下，y轴指向右，z轴指向上
+        % 这种设置对应于从第一卦限外观看立方体，使其一角朝向观察者
+        x={(-0.6cm,-0.4cm)}, 
+        y={(1cm,0cm)}, 
+        z={(0cm,1cm)}, 
+        scale=2,
+        >=Stealth
+    ]
+
+        % --- 定义坐标点 ---
+        % 晶格常数设为 1 (绘图范围 -1 到 1)
+        \coordinate (O) at (0,0,0); % Gamma点
+        
+        % 高对称点 (基于简单立方Simple Cubic的布里渊区定义)
+        % X: 面心 (沿着b2方向的面) -> (0, 1, 0)
+        % R: 顶点 (最远的角) -> (1, 1, 1)
+        % M: 棱心 (连接X和R的棱的中点?) 
+        % 在标准SC中，M是(1,1,0)。在图中，M位于连接前脸和右脸的垂直棱的中点。
+        % 几何上：X(0,1,0), M(1,1,0), R(1,1,1)
+        
+        \coordinate (Gamma) at (0,0,0);
+        \coordinate (X) at (0,1,0);
+        \coordinate (M) at (1,1,0);
+        \coordinate (R) at (1,1,1);
+
+        % 立方体顶点
+        \coordinate (V1) at (-1,-1,-1);
+        \coordinate (V2) at (1,-1,-1);
+        \coordinate (V3) at (1,1,-1);
+        \coordinate (V4) at (-1,1,-1);
+        \coordinate (V5) at (-1,-1,1);
+        \coordinate (V6) at (1,-1,1);
+        \coordinate (V7) at (1,1,1); % R点位置
+        \coordinate (V8) at (-1,1,1);
+
+        % --- 1. 绘制背景虚线 (背面不可见的棱) ---
+        % 背面顶点是 (-1,-1,-1), (-1,1,-1), (1,-1,-1) 等
+        % 根据视角，面 x=-1, y=-1, z=-1 是背面的
+        \draw[dotted, thick, darkgray] (V1) -- (V2);
+        \draw[dotted, thick, darkgray] (V1) -- (V4);
+        \draw[dotted, thick, darkgray] (V1) -- (V5);
+        \draw[dotted, thick, darkgray] (V4) -- (V3); % 后上面
+        \draw[dotted, thick, darkgray] (V2) -- (V3); % 后右面 (部分被遮挡，但在该视角下V3可见)
+        % 修正：在该视角下(x左下, y右)，(1,1,1)最靠近观察者。
+        % (-1,-1,-1) 最远。与(-1,-1,-1)相连的棱都是虚线。
+        
+        % 为了确保透视正确，手动指定虚实
+        % 只有连接到 (-1,-1,-1) 的三条棱是完全不可见的内部棱，或者是背面轮廓
+        % 另外，由于立方体不透明，所有背面面上的线都应虚线。
+        % 简单处理：画出完整的背面框架
+        \draw[dotted, thick, darkgray] (-1,1,-1) -- (1,1,-1);
+        \draw[dotted, thick, darkgray] (1,-1,-1) -- (1,1,-1);
+
+        % --- 2. 绘制坐标轴 (b1, b2, b3) ---
+        % b1 穿过 x=1 的面中心 (1,0,0)
+        \draw[->, thick] (1,0,0) -- (1.6,0,0) node[anchor=east] {$\mathbf{b}_1$};
+        % b2 穿过 y=1 的面中心 (0,1,0) (即X点)
+        \draw[->, thick] (0,1,0) -- (0,1.6,0) node[anchor=west] {$\mathbf{b}_2$};
+        % b3 穿过 z=1 的面中心 (0,0,1)
+        \draw[->, thick] (0,0,1) -- (0,0,1.6) node[anchor=west] {$\mathbf{b}_3$};
+
+        % --- 3. 绘制高对称路径 (红色四面体) ---
+        % 内部连线 (Gamma点在体心)，使用虚线
+        \draw[red, very thick, dashed] (Gamma) -- (X);
+        \draw[red, very thick, dashed] (Gamma) -- (M);
+        \draw[red, very thick, dashed] (Gamma) -- (R);
+        
+        % 表面连线，保持实线
+        \draw[red, very thick] (X) -- (M);
+        \draw[red, very thick] (M) -- (R);
+        \draw[red, very thick] (X) -- (R);
+
+        % --- 4. 绘制可见的立方体外框 (实线) ---
+        % 前面 (x=1), 右面 (y=1), 上面 (z=1)
+        % 轮廓线
+        \draw[black, thin] (-1,1,1) -- (1,1,1); % 上前棱
+        \draw[black, thin] (1,1,1) -- (1,-1,1); % 前右棱 (垂直)
+        \draw[black, thin] (1,1,1) -- (1,1,-1); % 右上棱
+        
+        \draw[black, thin] (-1,-1,1) -- (1,-1,1); % 下前
+        \draw[black, thin] (-1,-1,1) -- (-1,1,1); % 左前
+        
+        \draw[black, thin] (1,-1,1) -- (1,-1,-1); % 右下
+        \draw[black, thin] (-1,1,1) -- (-1,1,-1); % 左上
+        
+        % 补全外框闭合
+        \draw[black, thin] (1,1,-1) -- (-1,1,-1);
+        \draw[black, thin] (1,1,-1) -- (1,-1,-1);
+
+        % 辅助虚线 (Gamma到轴的投影)
+        % 指向 b1 方向 (右前方面中心)
+        \draw[dotted, thick] (Gamma) -- (1,0,0);
+        % 指向 b3 方向 (上方面中心)
+        \draw[dotted, thick] (Gamma) -- (0,0,1);
+
+        % --- 5. 绘制高对称点 (圆点) ---
+        \fill[red] (Gamma) circle (1.5pt) node[anchor=north east, text=black] {$\Gamma$};
+        \fill[red] (X) circle (1.5pt) node[anchor=south west, text=black] {X};
+        \fill[red] (M) circle (1.5pt) node[anchor=north east, text=black] {M};
+        \fill[red] (R) circle (1.5pt) node[anchor=south, text=black, yshift=2pt] {R};
+
+    \end{tikzpicture}
+    \caption{Highly symmetric points in the Brillouin zone of a cubic lattice}
+    \label{fig:symmetric-points-of-cubic-lattice}
+\end{figure}

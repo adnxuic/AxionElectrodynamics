@@ -1,0 +1,116 @@
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[
+        x={(-0.6cm,-0.4cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, % 定义3D坐标系
+        scale=2,
+        >=Stealth,
+        font=\sffamily
+    ]
+
+        % --- 参数设置 ---
+        \def\w{2.5} % 宽度 (y轴)
+        \def\d{2.5} % 深度 (x轴)
+        \def\h{1.2} % 高度 (z轴)
+        
+        % 颜色定义
+        \definecolor{materialcolor}{RGB}{220, 220, 225}
+        \definecolor{bfieldcolor}{RGB}{0, 0, 200}
+        \definecolor{chargecolor}{RGB}{220, 50, 50}
+
+        % --- 1. 底层绘制 (Z <= 0) ---
+        
+        % 1.1 底部外部磁场 (穿入前)
+        \foreach \ix in {0.5, 1.25, 2.0} {
+            \foreach \iy in {0.5, 1.25, 2.0} {
+                \draw[bfieldcolor, thick] (\ix, \iy, -0.8) -- (\ix, \iy, 0);
+            }
+        }
+
+        % 1.2 底部表面电荷 (正电荷, 红色)
+        % 在立方体绘制之前画，这样会被半透明底面覆盖，营造出在底部的感觉
+        \def\randompoints{0.2/0.3, 0.8/1.8, 1.6/0.6, 2.3/2.2, 1.0/1.0, 0.3/1.5}
+        \foreach \rx/\ry in \randompoints {
+            \node[circle, draw=chargecolor, fill=white!90!materialcolor, inner sep=0.5pt, text=chargecolor, font=\bfseries, scale=0.6, opacity=0.9] 
+                at (\rx, \ry, 0) {$+$};
+        }
+        
+        % 1.3 内部磁场 (虚线, 0 < z < h)
+        % 先画内部线，再画立方体填充，体现“被包裹”的效果
+        \foreach \ix in {0.5, 1.25, 2.0} {
+            \foreach \iy in {0.5, 1.25, 2.0} {
+                \draw[bfieldcolor, thin, dashed, opacity=0.6] (\ix, \iy, 0) -- (\ix, \iy, \h);
+            }
+        }
+
+        % --- 2. 绘制立方体 (Topological Material) ---
+        % 顶点定义
+        \coordinate (O) at (0,0,0);
+        \coordinate (A) at (\d,0,0);
+        \coordinate (B) at (\d,\w,0);
+        \coordinate (C) at (0,\w,0);
+        \coordinate (D) at (0,0,\h);
+        \coordinate (E) at (\d,0,\h);
+        \coordinate (F) at (\d,\w,\h);
+        \coordinate (G) at (0,\w,\h);
+
+        % 后棱 (虚线)
+        \draw[dashed, gray] (O) -- (C);
+        \draw[dashed, gray] (C) -- (G);
+        \draw[dashed, gray] (C) -- (B);
+
+        % 填充主体 (半透明)
+        % 调整顺序：先画背面/底面，再画前面/顶面
+        \fill[materialcolor, opacity=0.7] (O) -- (A) -- (B) -- (C) -- cycle; % 底面
+        \fill[materialcolor, opacity=0.5] (O) -- (A) -- (E) -- (D) -- cycle; % 左侧面
+        \fill[materialcolor, opacity=0.3] (A) -- (B) -- (F) -- (E) -- cycle; % 前侧面
+        \fill[materialcolor, opacity=0.8] (D) -- (E) -- (F) -- (G) -- cycle; % 顶面
+
+        % 绘制边框
+        \draw[thick, gray!80] (O) -- (A) -- (B); 
+        \draw[thick, gray!80] (O) -- (D); 
+        \draw[thick, gray!80] (A) -- (E); 
+        \draw[thick, gray!80] (B) -- (F); 
+        \draw[thick, gray!80] (D) -- (E) -- (F) -- (G) -- cycle; 
+
+        % --- 3. 内部文字标注 ---
+        \node[anchor=center] at (\d/2, \w/2, \h/4) {\large $\theta = \pi$};
+        \node[anchor=south west, gray!60, scale=0.8] at (0,0,0) {Topological Material};
+
+        % --- 4. 顶层绘制 (Z >= h, 必须在立方体之后画) ---
+        
+        % 4.1 顶部表面电荷 (负电荷, 黑色) - 此时画在顶面之上，清晰无遮挡
+        \foreach \rx/\ry in \randompoints {
+            \node[circle, draw=black, fill=white!80!materialcolor, inner sep=0.5pt, text=black, font=\bfseries, scale=0.6, opacity=1.0] 
+                at (\rx, \ry, \h) {$-$};
+        }
+
+        % 4.2 顶部外部磁场 (实线箭头) - 从顶面发出，清晰无遮挡
+        \foreach \ix in {0.5, 1.25, 2.0} {
+            \foreach \iy in {0.5, 1.25, 2.0} {
+                \draw[bfieldcolor, thick, ->] (\ix, \iy, \h) -- ++(0, 0, 1.2);
+            }
+        }
+
+        % --- 5. 外部文字标注 ---
+        
+        % 场标签
+        \node[bfieldcolor, anchor=south] at (2.0, 2.0, \h+1.2) {$\mathbf{B}$};
+        
+        % 环境标签
+        \node at (\d/2, \w/2, \h+1.8) {Vacuum ($\theta = 0$)};
+        
+        % 表面电荷标签
+        % 修改：指向右后方的一个电荷(0.8, 1.8)，并将标签向右侧拉出，避开垂直的磁场线
+        \draw[<-] (0.8, 1.8, \h) -- ++(-0.5, 1.5, 0.2) node[anchor=west, align=left, scale=0.8] {Surface Charge \\ $\rho = \frac{\alpha c}{\pi} (\partial_z \theta) B$};
+
+        % 坐标轴指示 (右下角) - 已调小
+        \begin{scope}[shift={(2.5, 3.8, 0)}] 
+            \draw[->, thick, black!70] (0, 0, 0) -- (0, 0.5, 0) node[right, scale=0.8] {$y$};
+            \draw[->, thick, black!70] (0, 0, 0) -- (0, 0, 0.5) node[above, scale=0.8] {$z$};
+            \draw[->, thick, black!70] (0, 0, 0) -- (0.5, 0, 0) node[below left, scale=0.8] {$x$};
+        \end{scope}
+
+    \end{tikzpicture}
+    \caption{Topological Surface Charge}
+    \label{fig:topological_surface_charge}
+\end{figure}

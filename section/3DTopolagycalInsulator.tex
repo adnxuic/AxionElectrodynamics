@@ -84,3 +84,125 @@ let's return to the continuum isotropic Hamiltonian to obtain the $\theta$ term.
 \begin{equation}
 H_{\mathrm{TI}}(\bm{k}) = A \bm{k} \cdot \bm{\alpha} + m_0 \alpha_4
 \end{equation}
+
+Because this Hamiltonian describes a topological insulator, $m_0$ is less than zero 
+($(-1)^\nu = \mathrm{sgn}(m_0)$). 
+Except for the negative mass $m_0$, this is the usual Dirac Hamiltonian ($A\bm{k} \to c\bm{p}$).
+In the presence of an external electromagnetic vector potential $\bm{A}$, minimal coupling results in:
+\begin{equation}
+\bm{p} \to \bm{p} + e\bm{A}
+\end{equation}
+where $e>0$ being the magnitude of the electron charge.
+At the same time, because of the external electromagnetic scalar potential $A_0$, the energy density is modified as:
+\begin{equation}
+\psi^\dagger H_0 \psi \to \psi^\dagger (H_0 - eA_0) \psi
+\end{equation}
+So the action of the system in the presence of an external electromagnetic four potential $A_\mu = (A_0, -\bm{A})$ is written in the follow relativistic form:
+\begin{equation}
+\begin{aligned}
+S_{\mathrm{TI}} &= \int \mathrm{d}t \mathrm{d}^3x \ \psi^\dagger \{ \mathrm{i}(\partial_t - \mathrm{i}eA_0) - [H_{\mathrm{TI}}(\bm{k} + e\bm{A})] \} \psi \\
+&= \int \mathrm{d}t \mathrm{d}^3x \ \psi^\dagger [ \mathrm{i}(\partial_t - \mathrm{i}eA_0) - (-\mathrm{i}\nabla + e\bm{A}) \cdot \bm{\alpha} - m_0 \alpha_4 ] \psi
+\end{aligned}
+\end{equation}
+where $\psi^\dagger(\bm{x},t)$ is a fermionic field representing the basis of the Hamiltonian.
+
+Then we need to convert from the basis of $\psi^\dagger$ and $\alpha_j$ matrix to the relativistic form basis of $\bar{\psi}$ and $\gamma$ matrices:
+\begin{equation}
+\left\{
+\begin{aligned}
+&\gamma^0 = \alpha_4 = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} \\
+&\gamma^j = \alpha_4 \alpha_j = \begin{bmatrix} 0 & \sigma_j \\ -\sigma_j & 0 \end{bmatrix} \\
+&\gamma^5 = \mathrm{i} \gamma^0 \gamma^1 \gamma^2 \gamma^3 = \begin{bmatrix} 0 & I \\ I & 0 \end{bmatrix}, \\
+&\bar{\psi} = \psi^\dagger \gamma^0
+\end{aligned}
+\right.
+\end{equation}
+To introduce $\bar{\psi}$, we use the identity $(\gamma^0)^2 = \mathbb{I}_{4 \times 4}$, so the Lagrangian can be rewritten as:
+\begin{equation}
+\begin{aligned}
+\mathcal{L}_{\mathrm{TI}} &= \bar{\psi} \gamma^0 [ \mathrm{i}(\partial_t - \mathrm{i}eA_0) + \mathrm{i} \nabla \cdot \bm{\alpha} - e \bm{A} \cdot \bm{\alpha} - m_0 \alpha_4 ] \psi \\
+&= \bar{\psi} [ \gamma^0 (\mathrm{i}\partial_t + \mathrm{i}\nabla \cdot \bm{\alpha}) + \gamma^0 (eA_0 - e\bm{A} \cdot \bm{\alpha}) - m_0 \gamma^0 \alpha_4 ] \psi \\
+&= \bar{\psi} [ \mathrm{i} (\gamma^0 \partial_t + \bm{\gamma} \cdot \bm{\nabla}) + (eA_0 \gamma^0 - e\bm{A} \cdot \bm{\gamma}) - m_0 ] \psi \\
+&= \bar{\psi} [ \mathrm{i} \gamma^\mu \partial_\mu + e \gamma^\mu A_\mu - m_0 ] \psi \\
+&= \bar{\psi} [ \mathrm{i} \gamma^\mu (\partial_\mu - \mathrm{i}eA_\mu) - m_0 ] \psi
+\end{aligned}
+\end{equation}
+In order to be convenient to study the system, we transform the system from Minkowski spacetime to Euclidean spacetime:
+\begin{equation}
+S_{\mathrm{TI}}^E = -\mathrm{i} S_{\mathrm{TI}}.
+\end{equation}
+
+We rewrite $t$, $A_0$ and $\gamma^j$ as following:
+\begin{equation}
+\left\{
+\begin{aligned}
+&t \to -\mathrm{i}\tau \\
+&A_0 \to \mathrm{i} A_0 \\
+&\gamma^j \to  \mathrm{i} \gamma_j \\
+&m_0 = -m_0 (\cos \pi + \mathrm{i} \gamma_5 \sin \pi) = -m_0 e^{\mathrm{i} \pi \gamma_5}
+\end{aligned}
+\right.
+\end{equation}
+So the Euclidean spacetime action of system is written as:
+\begin{equation}
+S_{\mathrm{TI}}^E = \int \mathrm{d}\tau \mathrm{d}^3x \ \bar{\psi} [ \gamma_\mu (\partial_\mu - \mathrm{i}eA_\mu) - m_0 e^{\mathrm{i} \pi \gamma_5} ] \psi
+\end{equation}
+Now we apply Fujikawa's method to the action. First, let's consider an infinitesimal chiral transformation defined by:
+\begin{equation}
+\left\{
+\begin{aligned}
+&\psi \to \psi' = e^{-\frac{\mathrm{i} \pi \phi}{2} \gamma_5} \psi \\
+&\bar{\psi} \to \bar{\psi}' = \bar{\psi} e^{-\frac{\mathrm{i} \pi \phi}{2} \gamma_5}
+\end{aligned}
+\right.
+\end{equation}
+where $\phi \in [0,1]$. Then the partition function $Z$ is transformed as:
+\begin{equation}
+\begin{aligned}
+&Z = \int D[\psi, \bar{\psi}] e^{-S_{\mathrm{TI}}^E[\psi, \bar{\psi}]} \\
+\Rightarrow & Z' = \int D[\psi', \bar{\psi}'] e^{-S_{\mathrm{TI}}^E[\psi', \bar{\psi}']}
+\end{aligned}
+\end{equation}
+
+let's see the first term of $S_{TI}^{E'}$ :
+\begin{equation}
+K = \int \mathrm{d}\tau \mathrm{d}^3x \ \bar{\psi} e^{-\mathrm{i}\theta \gamma_5} [\gamma_\mu(\partial_\mu - \mathrm{i}eA_\mu)] e^{-\mathrm{i}\theta \gamma_5} \psi
+\end{equation}
+where $\theta = \frac{\pi \mathrm{d}\phi}{2}$. Because the anticommutation relation $\{\gamma_\mu, \gamma_\nu\} = 2\delta_{\mu\nu}$ is satisfied, so:
+\begin{equation}
+e^{-\mathrm{i}\theta \gamma_5} \gamma_\mu = \gamma_\mu e^{\mathrm{i}\theta \gamma_5}
+\end{equation}
+The Lagrangian of K can be written as:
+\begin{equation}
+\begin{aligned}
+\mathcal{L}_K &= \bar{\psi} \gamma_\mu e^{\mathrm{i}\theta \gamma_5} (\partial_\mu - \mathrm{i}eA_\mu) e^{-\mathrm{i}\theta \gamma_5} \psi \\
+&= \bar{\psi} \gamma_\mu (\partial_\mu - \mathrm{i}eA_\mu) \psi
+\end{aligned}
+\end{equation}
+
+Next, let's see the mass term of $S_{TI}^{E'}$ :
+\begin{equation}
+\begin{aligned}
+\mathcal{L}_M &= -\bar{\psi} e^{-\mathrm{i}\theta \gamma_5} m_0 e^{\mathrm{i}\pi \gamma_5} e^{-\mathrm{i}\theta \gamma_5} \psi \\
+&= -m_0 \bar{\psi} e^{\mathrm{i}\pi(1 - \mathrm{d}\phi)\gamma_5} \psi
+\end{aligned}
+\end{equation}
+So the action in Euclidean space time is transformed as:
+\begin{equation}
+S_{TI}^{'E} = \int \mathrm{d}\tau \mathrm{d}^3x \ \bar{\psi} [\gamma_\mu(\partial_\mu - \mathrm{i}eA_\mu) - m_0 e^{\mathrm{i}\pi(1-\mathrm{d}\phi)\gamma_5}] \psi
+\end{equation}
+
+We should consider the transformation of $D[\psi', \bar{\psi}']$
+\begin{equation}
+D[\psi', \bar{\psi}'] = J D[\psi, \bar{\psi}]
+\end{equation}
+The Jacobian J is written as:
+\begin{equation}
+\ln J = -\mathrm{i} \int \mathrm{d}\tau \mathrm{d}^3x \ \mathrm{d}\phi \frac{\pi e^2}{16 \pi^2} {}^\star F^{\mu\nu} F_{\mu\nu}
+\end{equation}
+We integrate with respect to the variable $\phi$ from 0 to 1. Due to the invariance of the partition function, finally, we arrive at the following expression of $S_{TI}^E$:
+\begin{equation}
+S_{TI}^E = \int \mathrm{d}\tau \mathrm{d}^3x \bar{\psi} [\gamma_\mu (\partial_\mu - \mathrm{i}eA_\mu) - m_0] \psi + \mathrm{i} \int \mathrm{d}\tau \mathrm{d}^3x \frac{\pi e^2}{16 \pi^2} {}^\star F^{\mu\nu} F_{\mu\nu}
+\end{equation}
+The first term is the action of a topological trivial insulator since the mass $-m_0$ is positive. The second term is the $\theta$ term whose $\theta$ equal to $\pi$ in the imaginary time.
+Thus, we have demonstrated that for 3D topological insulators, the $\theta$ in $\theta$ term is $\pi$.

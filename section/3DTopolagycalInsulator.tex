@@ -206,3 +206,41 @@ S_{TI}^E = \int \mathrm{d}\tau \mathrm{d}^3x \bar{\psi} [\gamma_\mu (\partial_\m
 \end{equation}
 The first term is the action of a topological trivial insulator since the mass $-m_0$ is positive. The second term is the $\theta$ term whose $\theta$ equal to $\pi$ in the imaginary time.
 Thus, we have demonstrated that for 3D topological insulators, the $\theta$ in $\theta$ term is $\pi$.
+
+\subsection{Topological magneto electric effect}
+
+we have seen that topological insulators are a class fascinating class of materials whose dynamic is characterised by the fact that $\theta = \uppi$.
+we will see that if a topological insulator is placed in an electric or magnetic field, it will exhibit many novel physical effects.
+
+First, we place a topological insulator in a uniform magnetic field directed along the z axis. Because $\theta$ undergoes a discontinuity at the surface of the topological insulator, charge will be induced on the surface:
+\begin{equation}
+\int \sigma \cdot \mathrm{d}s = \int \nabla \cdot \bm{E} \mathrm{d}V = \int \frac{\alpha}{\uppi} (\nabla \theta) \cdot \bm{B} \mathrm{d}V.
+\end{equation}
+At the upper interface, $\theta$ jumps from $\uppi$ to $0$, whereas at the lower interface, $\theta$ jumps from $0$ to $\uppi$, so:
+\begin{equation}
+\sigma = \left\{
+\begin{aligned}
+&-\alpha B \ (\text{upper interface}) \\
+&\alpha B \ (\text{lower interface})
+\end{aligned}
+\right.
+\end{equation}
+Thus, the magnetic field induces negative charge on the upper interface and positive charge on the lower interface.
+
+Alternatively, we can turn on an electric field lies tangential to the interface, we place a topological insulator in uniform electric field directed along the y axis. Similarly, because $\theta$ undergoes a discontinuity at the surface of the topological insulator, a surface current $\bm{K}$ will therefore be induced:
+\begin{equation}
+\int \bm{K} \cdot \mathrm{d}l = \int \nabla \times \bm{B} \mathrm{d}s = -\int \frac{\alpha}{\uppi} \nabla \theta \times \bm{E} \mathrm{d}s
+\end{equation}
+Simplistically, we only consider the surface current on upper interface, so
+\begin{equation}
+\begin{aligned}
+\bm{K} &= -\alpha E \hat{\bm{e}}_x \\
+&= -\frac{1}{2} \cdot \frac{e^2}{2\uppi} E \hat{\bm{e}}_x
+\end{aligned}
+\end{equation}
+The creation of a two-dimensional current which lies perpendicular to an applied electric field is called the Hall effect the coefficient of proportionality is known as the Hall conductivity:
+\begin{equation}
+\sigma_{xy} = \frac{1}{2} \cdot \frac{e^2}{2\uppi}
+\end{equation}
+This is usually abbreviated to say that the interface of the topological insulator has Hall conductivity $1/2$.
+The general phenomenon in which electric fields induce magnetic fields and vice versa goes by the name of the topological magneto-electric effect.

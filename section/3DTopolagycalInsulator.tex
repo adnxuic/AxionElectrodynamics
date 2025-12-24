@@ -1,6 +1,6 @@
 \section{3D Topological Insulator}
 
-Let's consider the low-energy continuum model for prototypical 3D topological insulators such as $\mathrm{Bi}_2\mathrm{Se}_3$. The bulk electronic structure of $\mathrm{Bi}_2\mathrm{Se}_3$ near the Fermi level is described by two p-orbitals $P1_z^+$ and $P2_z^-$ with $\pm$ denoting parity. Defining the basis $\{ |P1_z^+, \uparrow \rangle, |P1_z^+, \downarrow \rangle, |P2_z^-, \uparrow \rangle, |P2_z^-, \downarrow \rangle \}$ and retaining the wave vector $\bm{k}$ up to quadratic order, the low-energy effective Hamiltonian around the $\Gamma$ point is given by:
+Let us consider the low-energy continuum model for prototypical 3D topological insulators such as $\mathrm{Bi}_2\mathrm{Se}_3$. The bulk electronic structure of $\mathrm{Bi}_2\mathrm{Se}_3$ near the Fermi level is described by two $p$ orbitals, $P1_z^+$ and $P2_z^-$, where $\pm$ denote parity. Defining the basis $\{ |P1_z^+, \uparrow \rangle, |P1_z^+, \downarrow \rangle, |P2_z^-, \uparrow \rangle, |P2_z^-, \downarrow \rangle \}$ and retaining the wave vector $\bm{k}$ up to quadratic order, the low-energy effective Hamiltonian around the $\Gamma$ point is given by:
 \begin{equation}
     \begin{aligned}
     H_{\mathrm{eff}}(\bm{k}) &= 
@@ -13,14 +13,14 @@ Let's consider the low-energy continuum model for prototypical 3D topological in
     &= A_2 k_x \alpha_1 + A_2 k_y \alpha_2 + A_1 k_z \alpha_3 + M(\bm{k}) \alpha_4
 \end{aligned}
 \end{equation}
-where $k_\pm = k_x \pm \mathrm{i} k_y$ and $M(\bm{k}) = m_0 - B_1 k_z^2 - B_2(k_x^2 + k_y^2)$. The $4 \times 4$ matrices $\alpha_\mu$ are given by the Dirac representation:
+where $k_\pm = k_x \pm \mathrm{i} k_y$ and $M(\bm{k}) = m_0 - B_1 k_z^2 - B_2(k_x^2 + k_y^2)$. The $4 \times 4$ matrices $\alpha_\mu$ are given in the Dirac representation:
 \begin{equation}
 \alpha_j = \begin{bmatrix} 0 & \sigma_j \\ \sigma_j & 0 \end{bmatrix} , \quad \alpha_4 = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
 \end{equation}
 
-Next, let's consider the lattice model of above Hamiltonian, which can calculate the $\mathbb{Z}_2$ invariant identifying whether a phase is topological nontrivial or trivial.
+Next, let us consider the lattice model corresponding to the Hamiltonian above, which allows us to compute the $\mathbb{Z}_2$ invariant and identify whether a phase is topologically nontrivial or trivial.
 
-The simplest 3D lattice is the cubic lattice. We make the changes as following (ignore lattice constant $a$).
+The simplest 3D lattice is the cubic lattice. We make the following substitutions (ignoring the lattice constant $a$):
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -30,16 +30,16 @@ k_i^2 &\to 2(1 - \cos k_i)
 \right.
 \end{equation}
 
-and simplify the coefficients to obtain the isotropic lattice Hamiltonian:
+and simplify the coefficients to obtain an isotropic lattice Hamiltonian:
 \begin{equation}
 H_{\mathrm{eff}}(\bm{k}) = A(\alpha_1 \sin k_x + \alpha_2 \sin k_y + \alpha_3 \sin k_z) + [m_0 + r \sum (1 - \cos k_i)] \alpha_4
 \end{equation}
 where we define $A=A_1=A_2$ and $r=-2B_1=-2B_2$.
-Then, we use Fu-Kane method to calculate the $\mathbb{Z}_2$ topological invariant for this system:
+We then use the Fu--Kane method to calculate the $\mathbb{Z}_2$ topological invariant for this system:
 \begin{equation}
 (-1)^\nu = \prod_{i=1}^{N_{\mathrm{TRIM}}} \mathrm{sgn}[M(\Lambda_i)]
 \end{equation}
-In this 3D cubic lattice, there are 8 TRIM (Time-Reversal Invariant Momenta which are invariant under $k_i \to -k_i$) point :
+In this 3D cubic lattice, there are eight TRIMs (time-reversal-invariant momenta, which are invariant under $k_i \to -k_i$):
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -57,7 +57,7 @@ The mass term is:
 \begin{equation}
 M(\bm{k}) = m_0 + r \sum_{t=x,y,z} (1 - \cos k_t)
 \end{equation}
-so we can calculate the mass term for each group of point:
+so we can compute the mass term for each group of points:
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -68,7 +68,7 @@ so we can calculate the mass term for each group of point:
 \end{aligned}
 \right.
 \end{equation}
-Now we substitute these mass terms into the $\mathbb{Z}_2$ topological invariant formula
+Now we substitute these mass terms into the $\mathbb{Z}_2$ topological-invariant formula:
 \begin{equation}
 \begin{aligned}
 (-1)^\nu &= \mathrm{sgn}(m_0) \times \mathrm{sgn}(m_0 + 2r)^3 \times \mathrm{sgn}(m_0 + 4r)^3 \times \mathrm{sgn}(m_0 + 6r) \\
@@ -80,33 +80,33 @@ Now we substitute these mass terms into the $\mathbb{Z}_2$ topological invariant
 \end{aligned}
 \end{equation}
 
-let's return to the continuum isotropic Hamiltonian to obtain the $\theta$ term. Consider the Hamiltonian around the $\Gamma$ point can be simplified by ignoring the terms second-order in $k_i$:
+Let us return to the isotropic continuum Hamiltonian to obtain the $\theta$ term. The Hamiltonian around the $\Gamma$ point can be simplified by ignoring terms that are second order in $k_i$:
 \begin{equation}
 H_{\mathrm{TI}}(\bm{k}) = A \bm{k} \cdot \bm{\alpha} + m_0 \alpha_4
 \end{equation}
 
-Because this Hamiltonian describes a topological insulator, $m_0$ is less than zero 
+Because this Hamiltonian describes a topological insulator, $m_0$ is less than zero
 ($(-1)^\nu = \mathrm{sgn}(m_0)$). 
-Except for the negative mass $m_0$, this is the usual Dirac Hamiltonian ($A\bm{k} \to c\bm{p}$).
+Apart from the negative mass $m_0$, this is the usual Dirac Hamiltonian ($A\bm{k} \to c\bm{p}$).
 In the presence of an external electromagnetic vector potential $\bm{A}$, minimal coupling results in:
 \begin{equation}
 \bm{p} \to \bm{p} + e\bm{A}
 \end{equation}
-where $e>0$ being the magnitude of the electron charge.
-At the same time, because of the external electromagnetic scalar potential $A_0$, the energy density is modified as:
+where $e>0$ is the magnitude of the electron charge.
+At the same time, in the presence of an external electromagnetic scalar potential $A_0$, the energy density is modified as:
 \begin{equation}
 \psi^\dagger H_0 \psi \to \psi^\dagger (H_0 - eA_0) \psi
 \end{equation}
-So the action of the system in the presence of an external electromagnetic four potential $A_\mu = (A_0, -\bm{A})$ is written in the follow relativistic form:
+Therefore, the action of the system in the presence of an external electromagnetic four-potential $A_\mu = (A_0, -\bm{A})$ can be written in the following relativistic form:
 \begin{equation}
 \begin{aligned}
 S_{\mathrm{TI}} &= \int \mathrm{d}t \mathrm{d}^3x \ \psi^\dagger \{ \mathrm{i}(\partial_t - \mathrm{i}eA_0) - [H_{\mathrm{TI}}(\bm{k} + e\bm{A})] \} \psi \\
 &= \int \mathrm{d}t \mathrm{d}^3x \ \psi^\dagger [ \mathrm{i}(\partial_t - \mathrm{i}eA_0) - (-\mathrm{i}\nabla + e\bm{A}) \cdot \bm{\alpha} - m_0 \alpha_4 ] \psi
 \end{aligned}
 \end{equation}
-where $\psi^\dagger(\bm{x},t)$ is a fermionic field representing the basis of the Hamiltonian.
+where $\psi^\dagger(\bm{x},t)$ is a fermionic field in the basis used to write the Hamiltonian.
 
-Then we need to convert from the basis of $\psi^\dagger$ and $\alpha_j$ matrix to the relativistic form basis of $\bar{\psi}$ and $\gamma$ matrices:
+We now convert from the basis of $\psi^\dagger$ and the $\alpha_j$ matrices to the relativistic basis of $\bar{\psi}$ and the $\gamma$ matrices:
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -117,7 +117,7 @@ Then we need to convert from the basis of $\psi^\dagger$ and $\alpha_j$ matrix t
 \end{aligned}
 \right.
 \end{equation}
-To introduce $\bar{\psi}$, we use the identity $(\gamma^0)^2 = \mathbb{I}_{4 \times 4}$, so the Lagrangian can be rewritten as:
+To introduce $\bar{\psi}$, we use the identity $(\gamma^0)^2 = \mathbb{I}_{4 \times 4}$, so the Lagrangian density can be rewritten as:
 \begin{equation}
 \begin{aligned}
 \mathcal{L}_{\mathrm{TI}} &= \bar{\psi} \gamma^0 [ \mathrm{i}(\partial_t - \mathrm{i}eA_0) + \mathrm{i} \nabla \cdot \bm{\alpha} - e \bm{A} \cdot \bm{\alpha} - m_0 \alpha_4 ] \psi \\
@@ -127,12 +127,12 @@ To introduce $\bar{\psi}$, we use the identity $(\gamma^0)^2 = \mathbb{I}_{4 \ti
 &= \bar{\psi} [ \mathrm{i} \gamma^\mu (\partial_\mu - \mathrm{i}eA_\mu) - m_0 ] \psi
 \end{aligned}
 \end{equation}
-In order to be convenient to study the system, we transform the system from Minkowski spacetime to Euclidean spacetime:
+To facilitate the analysis, we transform from Minkowski spacetime to Euclidean spacetime:
 \begin{equation}
 S_{\mathrm{TI}}^E = -\mathrm{i} S_{\mathrm{TI}}.
 \end{equation}
 
-We rewrite $t$, $A_0$ and $\gamma^j$ as following:
+We rewrite $t$, $A_0$, and $\gamma^j$ as follows:
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -143,11 +143,11 @@ We rewrite $t$, $A_0$ and $\gamma^j$ as following:
 \end{aligned}
 \right.
 \end{equation}
-So the Euclidean spacetime action of system is written as:
+Therefore, the Euclidean-spacetime action of the system is:
 \begin{equation}
 S_{\mathrm{TI}}^E = \int \mathrm{d}\tau \mathrm{d}^3x \ \bar{\psi} [ \gamma_\mu (\partial_\mu - \mathrm{i}eA_\mu) - m_0 e^{\mathrm{i} \pi \gamma_5} ] \psi
 \end{equation}
-Now we apply Fujikawa's method to the action. First, let's consider an infinitesimal chiral transformation defined by:
+Now we apply Fujikawa's method to the action. First, let us consider an infinitesimal chiral transformation defined by:
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -156,7 +156,7 @@ Now we apply Fujikawa's method to the action. First, let's consider an infinites
 \end{aligned}
 \right.
 \end{equation}
-where $\phi \in [0,1]$. Then the partition function $Z$ is transformed as:
+where $\phi \in [0,1]$. The partition function $Z$ transforms as:
 \begin{equation}
 \begin{aligned}
 &Z = \int D[\psi, \bar{\psi}] e^{-S_{\mathrm{TI}}^E[\psi, \bar{\psi}]} \\
@@ -164,15 +164,15 @@ where $\phi \in [0,1]$. Then the partition function $Z$ is transformed as:
 \end{aligned}
 \end{equation}
 
-let's see the first term of $S_{TI}^{E'}$ :
+Let us first consider the first term of $S_{TI}^{E'}$:
 \begin{equation}
 K = \int \mathrm{d}\tau \mathrm{d}^3x \ \bar{\psi} e^{-\mathrm{i}\theta \gamma_5} [\gamma_\mu(\partial_\mu - \mathrm{i}eA_\mu)] e^{-\mathrm{i}\theta \gamma_5} \psi
 \end{equation}
-where $\theta = \frac{\pi \mathrm{d}\phi}{2}$. Because the anticommutation relation $\{\gamma_\mu, \gamma_\nu\} = 2\delta_{\mu\nu}$ is satisfied, so:
+where $\theta = \frac{\pi \mathrm{d}\phi}{2}$. Because the anticommutation relation $\{\gamma_\mu, \gamma_\nu\} = 2\delta_{\mu\nu}$ holds, we have:
 \begin{equation}
 e^{-\mathrm{i}\theta \gamma_5} \gamma_\mu = \gamma_\mu e^{\mathrm{i}\theta \gamma_5}
 \end{equation}
-The Lagrangian of K can be written as:
+The Lagrangian density of $K$ can be written as:
 \begin{equation}
 \begin{aligned}
 \mathcal{L}_K &= \bar{\psi} \gamma_\mu e^{\mathrm{i}\theta \gamma_5} (\partial_\mu - \mathrm{i}eA_\mu) e^{-\mathrm{i}\theta \gamma_5} \psi \\
@@ -180,39 +180,39 @@ The Lagrangian of K can be written as:
 \end{aligned}
 \end{equation}
 
-Next, let's see the mass term of $S_{TI}^{E'}$ :
+Next, let us consider the mass term of $S_{TI}^{E'}$:
 \begin{equation}
 \begin{aligned}
 \mathcal{L}_M &= -\bar{\psi} e^{-\mathrm{i}\theta \gamma_5} m_0 e^{\mathrm{i}\pi \gamma_5} e^{-\mathrm{i}\theta \gamma_5} \psi \\
 &= -m_0 \bar{\psi} e^{\mathrm{i}\pi(1 - \mathrm{d}\phi)\gamma_5} \psi
 \end{aligned}
 \end{equation}
-So the action in Euclidean space time is transformed as:
+Therefore, the action in Euclidean spacetime is transformed as:
 \begin{equation}
 S_{TI}^{'E} = \int \mathrm{d}\tau \mathrm{d}^3x \ \bar{\psi} [\gamma_\mu(\partial_\mu - \mathrm{i}eA_\mu) - m_0 e^{\mathrm{i}\pi(1-\mathrm{d}\phi)\gamma_5}] \psi
 \end{equation}
 
-We should consider the transformation of $D[\psi', \bar{\psi}']$
+We should also consider the transformation of $D[\psi', \bar{\psi}']$.
 \begin{equation}
 D[\psi', \bar{\psi}'] = J D[\psi, \bar{\psi}]
 \end{equation}
-The Jacobian J is written as:
+The Jacobian $J$ is written as:
 \begin{equation}
 \ln J = -\mathrm{i} \int \mathrm{d}\tau \mathrm{d}^3x \ \mathrm{d}\phi \frac{\pi e^2}{16 \pi^2} {}^\star F^{\mu\nu} F_{\mu\nu}
 \end{equation}
-We integrate with respect to the variable $\phi$ from 0 to 1. Due to the invariance of the partition function, finally, we arrive at the following expression of $S_{TI}^E$:
+We integrate with respect to the variable $\phi$ from 0 to 1. Due to the invariance of the partition function, we finally arrive at the following expression for $S_{TI}^E$:
 \begin{equation}
 S_{TI}^E = \int \mathrm{d}\tau \mathrm{d}^3x \bar{\psi} [\gamma_\mu (\partial_\mu - \mathrm{i}eA_\mu) - m_0] \psi + \mathrm{i} \int \mathrm{d}\tau \mathrm{d}^3x \frac{\pi e^2}{16 \pi^2} {}^\star F^{\mu\nu} F_{\mu\nu}
 \end{equation}
-The first term is the action of a topological trivial insulator since the mass $-m_0$ is positive. The second term is the $\theta$ term whose $\theta$ equal to $\pi$ in the imaginary time.
-Thus, we have demonstrated that for 3D topological insulators, the $\theta$ in $\theta$ term is $\pi$.
+The first term is the action of a topologically trivial insulator since the mass $-m_0$ is positive. The second term is the $\theta$ term, with $\theta$ equal to $\pi$ in imaginary time.
+Thus, we have demonstrated that for 3D topological insulators, the $\theta$ in the $\theta$ term is $\pi$.
 
-\subsection{Topological magneto electric effect}
+\subsection{Topological magnetoelectric effect}
 
-we have seen that topological insulators are a class fascinating class of materials whose dynamic is characterised by the fact that $\theta = \uppi$.
-we will see that if a topological insulator is placed in an electric or magnetic field, it will exhibit many novel physical effects.
+We have seen that topological insulators are a fascinating class of materials whose dynamics are characterised by the fact that $\theta = \uppi$.
+We will see that if a topological insulator is placed in an electric or magnetic field, it will exhibit many novel physical effects.
 
-First, we place a topological insulator in a uniform magnetic field directed along the z axis. Because $\theta$ undergoes a discontinuity at the surface of the topological insulator, charge will be induced on the surface:
+First, we place a topological insulator in a uniform magnetic field directed along the $z$ axis. Because $\theta$ undergoes a discontinuity at the surface of the topological insulator, charge is induced on the surface:
 \begin{equation}
 \int \sigma \cdot \mathrm{d}s = \int \nabla \cdot \bm{E} \mathrm{d}V = \int \frac{\alpha}{\uppi} (\nabla \theta) \cdot \bm{B} \mathrm{d}V.
 \end{equation}
@@ -227,18 +227,18 @@ At the upper interface, $\theta$ jumps from $\uppi$ to $0$, whereas at the lower
 \end{equation}
 Thus, the magnetic field induces negative charge on the upper interface and positive charge on the lower interface.
 
-Alternatively, we can turn on an electric field lies tangential to the interface, we place a topological insulator in uniform electric field directed along the y axis. Similarly, because $\theta$ undergoes a discontinuity at the surface of the topological insulator, a surface current $\bm{K}$ will therefore be induced:
+Alternatively, we can apply an electric field tangential to the interface by placing a topological insulator in a uniform electric field directed along the $y$ axis. Similarly, because $\theta$ undergoes a discontinuity at the surface of the topological insulator, a surface current $\bm{K}$ is induced:
 \begin{equation}
 \int \bm{K} \cdot \mathrm{d}l = \int \nabla \times \bm{B} \mathrm{d}s = -\int \frac{\alpha}{\uppi} \nabla \theta \times \bm{E} \mathrm{d}s
 \end{equation}
-Simplistically, we only consider the surface current on upper interface, so
+For simplicity, we consider only the surface current on the upper interface, so:
 \begin{equation}
 \begin{aligned}
 \bm{K} &= -\alpha E \hat{\bm{e}}_x \\
 &= -\frac{1}{2} \cdot \frac{e^2}{2\uppi} E \hat{\bm{e}}_x
 \end{aligned}
 \end{equation}
-The creation of a two-dimensional current which lies perpendicular to an applied electric field is called the Hall effect the coefficient of proportionality is known as the Hall conductivity:
+The creation of a two-dimensional current that lies perpendicular to an applied electric field is called the Hall effect; the coefficient of proportionality is known as the Hall conductivity:
 \begin{equation}
 \sigma_{xy} = \frac{1}{2} \cdot \frac{e^2}{2\uppi}
 \end{equation}

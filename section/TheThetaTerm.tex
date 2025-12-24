@@ -20,12 +20,12 @@ Here:
 \end{aligned}
 \right.
 \end{equation}
-One reason that the Maxwell action is so simple is that there is very little else we can write down that is both gauge invariant and Lorentz invariant. 
-There is, however one term that we can add to the Maxwell action is also both gauge invariant and Lorentz invariant, which we call it theta term:
+One reason the Maxwell action is so simple is that there is very little else we can write down that is both gauge-invariant and Lorentz-invariant. 
+There is, however, one additional term that we can add to the Maxwell action that is also gauge-invariant and Lorentz-invariant; we call it the theta term:
 \begin{equation}
 S_\theta = \frac{\theta e^2}{4\mathrm{\pi}^2} \int \mathrm{d}^4x \frac{1}{4} {}^\star F^{\mu\nu} F_{\mu\nu} = -\frac{\theta e^2}{4\mathrm{\pi}^2} \int \mathrm{d}^4x \bm{E} \cdot \bm{B}
 \end{equation}
-which ${}^\star F^{\mu\nu}$ is the dual tensor:
+where ${}^\star F^{\mu\nu}$ is the dual tensor:
 \begin{equation}
     \begin{aligned}
     {}^\star F^{\mu\nu} &= \frac{1}{2} \epsilon^{\mu\nu\rho\sigma} F_{\rho\sigma} \\
@@ -37,9 +37,9 @@ which ${}^\star F^{\mu\nu}$ is the dual tensor:
         \end{pmatrix}
 \end{aligned}
 \end{equation}
-and $\theta$ is a constant parameter.
+with $\theta$ a constant parameter.
 
-However, the theta term is simple to check that it can be written as a total derivative:
+However, it is straightforward to check that the theta term can be written as a total derivative:
 \begin{equation}
 \begin{aligned}
 \int \mathrm{d}^4x \frac{1}{4} {}^\star F^{\mu\nu} F_{\mu\nu} &= \frac{1}{2} \int \mathrm{d}^4x \cdot \frac{1}{4} \epsilon^{\mu\nu\rho\sigma} F_{\rho\sigma} F_{\mu\nu} \\
@@ -47,11 +47,11 @@ However, the theta term is simple to check that it can be written as a total der
 &= \frac{1}{2} \int \mathrm{d}^4x \cdot \epsilon^{\mu\nu\rho\sigma} (\partial_\mu A_\nu \partial_\rho A_\sigma)
 \end{aligned}
 \end{equation}
-Now let's proof a useful equation:
+Now let us prove a useful identity:
 \begin{equation}
 \epsilon^{\mu\nu\rho\sigma} A_\nu \partial_\mu \partial_\rho A_\sigma = 0
 \end{equation}
-Because:
+because:
 \begin{equation}
 \begin{aligned}
 \epsilon^{\mu\nu\rho\sigma} A_\nu \partial_\mu \partial_\rho A_\sigma &= \epsilon^{\rho\nu\mu\sigma} A_\nu \partial_\rho \partial_\mu A_\sigma \\
@@ -59,54 +59,54 @@ Because:
 &= -\epsilon^{\mu\nu\rho\sigma} A_\nu \partial_\mu \partial_\rho A_\sigma
 \end{aligned}
 \end{equation}
-So we can get:
+Therefore, we obtain:
 \begin{equation}
 2\epsilon^{\mu\nu\rho\sigma} A_\nu \partial_\mu \partial_\rho A_\sigma = 0 \Rightarrow \epsilon^{\mu\nu\rho\sigma} A_\nu \partial_\mu \partial_\rho A_\sigma = 0
 \end{equation}
 
-So the quadratic part of theta term become:
+Thus, the quadratic part of the theta term becomes:
 \begin{equation}
 \begin{aligned}
 \int \mathrm{d}^4x \frac{1}{4} {}^\star F^{\mu\nu} F_{\mu\nu} &= \frac{1}{2} \int \mathrm{d}^4x \epsilon^{\mu\nu\rho\sigma} (\partial_\mu A_\nu \partial_\rho A_\sigma + A_\nu \partial_\mu \partial_\rho A_\sigma) \\
 &= \frac{1}{2} \int \mathrm{d}^4x \epsilon^{\mu\nu\rho\sigma} \partial_\mu (A_\nu \partial_\rho A_\sigma)
 \end{aligned}
 \end{equation}
-The total derivative form of theta term is:
+Therefore, the theta term can be written as:
 \begin{equation}
 S_\theta = \frac{\theta e^2}{8\mathrm{\pi}^2} \int \mathrm{d}^4x \partial_\mu (\epsilon^{\mu\nu\rho\sigma} A_\nu \partial_\rho A_\sigma)
 \end{equation}
-We say that the theta term is topological. It depends only on boundary information. 
-However, when deriving using the principle of least action to derive the field's equation of motion, 
-the values of field are fixed on the infinite boundary. 
-Therefore, the upshot is that the theta term does not change the equations of motion and, it would seem, can have little effect on the physics.
+We therefore say that the theta term is topological: it depends only on boundary data. 
+However, when deriving the equations of motion via the principle of least action, 
+the fields are held fixed at the boundary (at infinity). 
+Therefore, the theta term does not modify the classical equations of motion and, at first sight, seems to have little physical effect.
 
-But under some situations that involve subtle interplay between quantum mechanics and topology, 
-there are a number of interesting phenomena of physics which are led by theta term.
+But in situations involving a subtle interplay between quantum mechanics and topology, 
+the theta term leads to a number of interesting physical phenomena.
 
-Also, we can look at the situations where $\theta$ affects the dynamics classically. This occurs when $\theta$ is not constant, but instead varies in space and time.
+We can also consider situations in which $\theta$ affects the dynamics classically. This occurs when $\theta$ is not constant, but instead varies in space and time.
 
 \begin{equation}
 \theta = \theta(\bm{x}, t)
 \end{equation}
 
-So we can write down the axion electrodynamics action:
+We can then write down the action for axion electrodynamics:
 \begin{equation}
 S = \int \mathrm{d}^4x (-\frac{1}{4} F^{\mu\nu} F_{\mu\nu} + \frac{e^2}{16\mathrm{\pi}^2} \theta(\bm{x}, t) {}^\star F^{\mu\nu} F_{\mu\nu})
 \end{equation}
 
-We use Euler-Lagrange equations:
+We use the Euler--Lagrange equations:
 \begin{equation}
 \frac{\partial \mathcal{L}}{\partial A_\mu} - \partial_\nu (\frac{\partial \mathcal{L}}{\partial (\partial_\nu A_\mu)}) = 0
 \end{equation}
 
-to get the equations of axion electrodynamics
+to obtain the equations of motion for axion electrodynamics.
 
-Because $\mathcal{L}$ doesn't depend on $A_\mu$, so the equations of motion are:
+Since $\mathcal{L}$ does not depend explicitly on $A_\mu$, the equations of motion reduce to:
 \begin{equation}
 \frac{\partial \mathcal{L}}{\partial A_\mu} = 0 \Rightarrow \partial_\nu [\frac{\partial \mathcal{L}}{\partial (\partial_\nu A_\mu)}] = 0
 \end{equation}
 
-and the $\mathcal{L}$ of axion electrodynamics is $(\alpha = \frac{e^2}{4\mathrm{\pi}})$:
+and the Lagrangian density for axion electrodynamics is $(\alpha = \frac{e^2}{4\mathrm{\pi}})$:
 \begin{equation}
 \begin{aligned}
 \mathcal{L} &= \mathcal{L}_{Max} + \mathcal{L}_\theta \\
@@ -114,7 +114,7 @@ and the $\mathcal{L}$ of axion electrodynamics is $(\alpha = \frac{e^2}{4\mathrm
 \end{aligned}
 \end{equation}
 
-First, let's see $\mathcal{L}_\theta$:
+First, let us consider $\mathcal{L}_\theta$:
 \begin{equation}
 \begin{aligned}
 \frac{\partial \mathcal{L}}{\partial (\partial_\nu A_\mu)} &= \frac{\partial}{\partial (\partial_\nu A_\mu)} \cdot \frac{\alpha}{4\mathrm{\pi}} \theta(\bm{x}, t) \cdot \frac{1}{2} \epsilon^{\alpha\beta\rho\sigma} F_{\alpha\beta} F_{\rho\sigma} \\
@@ -122,12 +122,12 @@ First, let's see $\mathcal{L}_\theta$:
 \end{aligned}
 \end{equation}
 
-let's see the first term:
+Let us first consider the first term:
 \begin{equation}
 \epsilon^{\alpha\beta\rho\sigma} F_{\alpha\beta} F_{\rho\sigma} \frac{\partial}{\partial (\partial_\nu A_\mu)} \theta(\bm{x}, t) = 0
 \end{equation}
 
-then let's see the second term:
+Next, consider the second term:
 \begin{equation}
 \begin{aligned}
 \theta(\bm{x}, t) \cdot \frac{\partial}{\partial (\partial_\nu A_\mu)} \cdot \epsilon^{\alpha\beta\rho\sigma} F_{\alpha\beta} F_{\rho\sigma} &= 4 \theta(\bm{x}, t) (\frac{\partial}{\partial (\partial_\nu A_\mu)} \partial_\alpha A_\beta \partial_\rho A_\sigma) \epsilon^{\alpha\beta\rho\sigma} \\
@@ -137,17 +137,17 @@ then let's see the second term:
 \end{aligned}
 \end{equation}
 
-next, we can get:
+Next, we have:
 \begin{equation}
 \partial_\nu [\theta(\bm{x}, t) {}^\star F^{\nu\mu}] = {}^\star F^{\nu\mu} \partial_\nu \theta(\bm{x}, t) + \theta(\bm{x}, t) \cdot \partial_\nu {}^\star F^{\nu\mu}
 \end{equation}
 
-using the Bianchi identities:
+Using the Bianchi identity:
 \begin{equation}
 \partial_\mu {}^\star F^{\mu\nu} = 0
 \end{equation}
 
-so we can get:
+so we obtain:
 \begin{equation}
 \partial_\nu \theta(\bm{x}, t) {}^\star F^{\nu\mu} = {}^\star F^{\nu\mu} \partial_\nu \theta(\bm{x}, t)
 \end{equation}
@@ -157,12 +157,12 @@ Finally, we can get:
 \partial_\nu [\frac{\partial \mathcal{L}_\theta}{\partial (\partial_\nu A_\mu)}] = \frac{\alpha}{\mathrm{\pi}} {}^\star F^{\nu\mu} \cdot \partial_\nu \theta(\bm{x}, t)
 \end{equation}
 
-And the Lagrangian of Maxwell part:
+For the Maxwell term, we have:
 \begin{equation}
 \partial_\nu [\frac{\partial \mathcal{L}_{Max}}{\partial (\partial_\nu A_\mu)}] = - \partial_\nu F^{\nu\mu}
 \end{equation}
 
-So the equations of axion electrodynamics is:
+Therefore, the equations of motion for axion electrodynamics are:
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -172,7 +172,7 @@ So the equations of axion electrodynamics is:
 \right.
 \end{equation}
 
-In the end, the deformed Maxwell equations which are the equations of axion electrodynamics are:
+In terms of the electric and magnetic fields, the modified Maxwell equations (axion electrodynamics) are:
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -184,9 +184,9 @@ In the end, the deformed Maxwell equations which are the equations of axion elec
 \right.
 \end{equation}
 
-The first equation tells us that in regions of space where $\theta$ varies, a magnetic field $\bm{B}$ acts like an electric charge density. The second equation tells us that the combination $(\dot{\theta}\bm{B} + \nabla\theta \times \bm{E})$ acts like a current density
+The first equation tells us that in regions of space where $\theta$ varies, a magnetic field $\bm{B}$ acts like an electric charge density. The second equation tells us that the combination $(\dot{\theta}\bm{B} + \nabla\theta \times \bm{E})$ acts like a current density.
 
-\subsection{The periodicity of theta and its values under Parity or Time - Reversal Symmetry}
+\subsection{The periodicity of theta and its values under parity or time-reversal symmetry}
 
 In quantum theory, $\theta$ is a periodic variable: it lies in the range:
 \begin{equation}
@@ -196,13 +196,13 @@ After imposing appropriate boundary conditions, $S_\theta$ can only take values 
 \begin{equation}
 S_\theta = \theta N \quad \text{with } N \in \mathbb{Z}
 \end{equation}
-This means that the theta angle contributes to the partition function as
+This means that the theta angle contributes to the partition function as:
 \begin{equation}
 e^{\mathrm{i}S_\theta} = e^{\mathrm{i}N\theta}
 \end{equation}
-To show that $S_\theta$ must take the form, we consider a compact Euclidean spacetime which we take to $T^4$ and we take each of the circles in the torus to have radii $R$.
+To show that $S_\theta$ must take this form, we consider a compact Euclidean spacetime, which we take to be $T^4$, with each circle of the torus having radius $R$.
 
-We consider easy case:
+We consider the simple case:
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -211,52 +211,52 @@ We consider easy case:
 \end{aligned}
 \right.
 \end{equation}
-The integral of $S_\theta$ is:
+The relevant integral in $S_\theta$ is:
 \begin{equation}
 I = \int_{T^4} \mathrm{d}^4x E_z \cdot B_z = \int_{T^4} \mathrm{d}x^0 \mathrm{d}x^3 \cdot E_z \cdot \int_{T^4} \mathrm{d}x^1 \mathrm{d}x^2 \cdot B_z
 \end{equation}
 The gauge field $A_\mu$ must be well defined on the underlying torus, which will put restrictions on the allowed values of $E_z$ and $B_z$.
-So the integral can't take any value.
+Thus, the integral cannot take an arbitrary value.
 
-Now let consider the restrictions of $A_\mu$ if $A_\mu$ be defined on torus. When a direction of space, say $x^1$, is periodic with radius $R$, the physics state in original point ($x^1=0$) must be identical to the final physics state:
+Now let us consider the restrictions on $A_\mu$ required for it to be well defined on the torus. When a spatial direction, say $x^1$, is periodic with radius $R$, the physical state at the initial point ($x^1=0$) must be identical to that at the final point:
 \begin{equation}
 \text{state}[A_1(0)] = \text{state}[A_1(2\mathrm{\pi} R)]
 \end{equation}
-Because $B_z = \partial_2 A_1, (A_2=0) =$ constant, so $A_1 = B_z x^2 + C$. The simplest case is $A_1=0$ but this case is trivial. So we should find a gauge transformations to connect $A(0)$ and $A(2\mathrm{\pi} R)$, which will make two different values of $A_1$ correspond to the same physics state.
+Since $B_z = \partial_2 A_1$ and (taking $A_2=0$) $A_2$ is constant, we have $A_1 = B_z x^2 + C$. The simplest choice $A_1=0$ is trivial. Therefore, we should find a gauge transformation that connects $A_1(0)$ and $A_1(2\mathrm{\pi} R)$, so that two different values of $A_1$ correspond to the same physical state.
 
 \begin{equation}
 A_1(2\mathrm{\pi} R) = A_1(0) + G
 \end{equation}
-let's find the gauge transformation that we are interested:
+Let us find the gauge transformation of interest:
 \begin{equation}
 A_1 \to A_1 + \partial_1 \chi
 \end{equation}
-We do not insist that $\chi(x)$ is single valued. Instead, we require only that $e^{\mathrm{i}e\chi}$ is single-valued, since this is what acts on the wavefunction. So $\chi$ can have the simple form followed:
+We do not require $\chi(x)$ to be single valued. Instead, we require only that $e^{\mathrm{i}e\chi}$ be single-valued, since this is what acts on the wavefunction. Therefore, $\chi$ can take the simple form:
 \begin{equation}
 \chi = \frac{n x^1}{e R} \quad \text{with } n \in \mathbb{Z}
 \end{equation}
-Because in the same point ($2\mathrm{\pi} NR + X$), $e^{\mathrm{i}e\chi}$ is the same state:
+Because at the same point ($2\mathrm{\pi} NR + X$), $e^{\mathrm{i}e\chi}$ represents the same state.
 
-There are sometimes called large gauge transformations, a name which reflects the fact that they cannot be continuously deformed to the identity. Under such a gauge transformation, we can see that:
+These are sometimes called large gauge transformations, a name which reflects the fact that they cannot be continuously deformed to the identity. Under such a gauge transformation, we have:
 \begin{equation}
 A_1 \to A_1 + \partial_1 \chi = A_1 + \frac{n}{eR}
 \end{equation}
-the two different values of $A_1$ correspond the same physics state. From this transformation, we can determine the expression of $A_1$,
+The two different values of $A_1$ correspond to the same physical state. From this transformation, we can determine the expression for $A_1$:
 \begin{equation}
 \begin{aligned}
 A_1(0) &= A_1(2\mathrm{\pi} R) + \frac{n}{eR} \\
 \Rightarrow A_1 &= \frac{n x^2}{2\mathrm{\pi} e R^2}
 \end{aligned}
 \end{equation}
-And we can write down the expression of $B_z$:
+We can then write down the expression for $B_z$:
 \begin{equation}
 B_z = \partial_2 A_1 = \frac{n}{2\mathrm{\pi} e R^2}
 \end{equation}
-So the integral of magnetic field is:
+Therefore, the integral of the magnetic field is:
 \begin{equation}
 \int_{T^2} \mathrm{d}x^1 \mathrm{d}x^2 B_z = \frac{2\mathrm{\pi} n}{e} \quad \text{with } n \in \mathbb{Z}
 \end{equation}
-We can also apply exactly the same argument to the electric field
+We can also apply exactly the same argument to the electric field.
 \begin{equation}
 E_z = \partial_0 A_3 \quad (A_0 = 0)
 \end{equation}
@@ -273,7 +273,7 @@ Armed with two integrals above, the $S_\theta$ becomes:
     \end{aligned}
 \end{equation}
 
-It's pretty straightforward to generalise it to non-constant $\bm{E}$ and $\bm{B}$ fields:
+It is straightforward to generalise this to non-constant $\bm{E}$ and $\bm{B}$ fields:
 
 \begin{equation}
 \begin{aligned}
@@ -283,10 +283,10 @@ It's pretty straightforward to generalise it to non-constant $\bm{E}$ and $\bm{B
 \end{aligned}
 \end{equation}
 
-So we can see that $\theta$ is a periodic variable in quantum theory.
+Therefore, $\theta$ is a periodic variable in quantum theory.
 
-Although the theta term is gauge invariant and Lorentz invariant, it is not invariant under certain discrete symmetries, 
-and does not preserve the same symmetries as the Maxwell term. These discrete symmetries are parity $\mathcal{P}$ and time reversal $\mathcal{T}$.
+Although the theta term is gauge-invariant and Lorentz-invariant, it is not invariant under certain discrete symmetries 
+and therefore does not preserve the same symmetries as the Maxwell term. These discrete symmetries are parity $\mathcal{P}$ and time reversal $\mathcal{T}$.
 
 \begin{equation}
 \left\{
@@ -297,7 +297,7 @@ and does not preserve the same symmetries as the Maxwell term. These discrete sy
 \right.
 \end{equation}
 
-If we act on both $\bm{E}$ and $\bm{B}$
+If we act on both $\bm{E}$ and $\bm{B}$, we have
 
 \begin{equation}
 \left\{
@@ -310,30 +310,30 @@ If we act on both $\bm{E}$ and $\bm{B}$
 
 So $\bm{E}$ is odd under parity and even under time reversal. $\bm{B}$ is even under parity and odd under time reversal.
 
-This means that, the theta term $S_\theta \propto \int \mathrm{d}^4x \bm{E} \cdot \bm{B}$ breaks both parity and time reversal invariance, 
-which means $S_\theta \to -S_\theta$ under $\mathcal{P}$ and $\mathcal{T}$. But because of the periodicity of $\theta$, there are two exceptions:
+This means that the theta term $S_\theta \propto \int \mathrm{d}^4x \bm{E} \cdot \bm{B}$ breaks both parity and time-reversal invariance: 
+one finds $S_\theta \to -S_\theta$ under $\mathcal{P}$ and $\mathcal{T}$. However, because of the periodicity of $\theta$, there are two exceptions:
 
 \begin{equation}
 S_\theta = -S_\theta + 2\mathrm{\pi} N
 \end{equation}
 
-In order to make the equation hold for any integer values of $N$, $\theta$ must equal to $0$ or $\mathrm{\pi}$ ($\theta \in [0, 2\mathrm{\pi})$).
+To make this equation hold for any integer value of $N$, $\theta$ must be equal to $0$ or $\mathrm{\pi}$ ($\theta \in [0, 2\mathrm{\pi})$).
 
-So we can know that when $\theta=0$ or $\theta=\mathrm{\pi}$, the theory is invariant under $\mathcal{P}$ and $\mathcal{T}$ symmetries.
+Therefore, when $\theta=0$ or $\theta=\mathrm{\pi}$, the theory is invariant under $\mathcal{P}$ and $\mathcal{T}$ symmetries.
 
-In subsequent sections, we can see that the topological insulator said to have a $\mathbb{Z}_2$ classification has $\theta=\mathrm{\pi}$ because these materials are defined to be time-reversal invariant. Most materials have $\theta=0$. But some materials have a band structure which is twisted in a particular way, which results in $\theta=\mathrm{\pi}$.
+In subsequent sections, we will see that a topological insulator with a $\mathbb{Z}_2$ classification has $\theta=\mathrm{\pi}$ because such materials are defined to be time-reversal invariant. Most materials have $\theta=0$. However, some materials have a band structure that is twisted in a particular way, which results in $\theta=\mathrm{\pi}$.
 
 \subsection{Continuity Conditions}
 
-Let's consider a equivalent way to describing the physics above. We introduce the electric displacement:
+Let us consider an equivalent way to describe the physics above. We introduce the electric displacement:
 \begin{equation}
 \bm{D} = \bm{E} - \frac{\alpha \theta}{\uppi} \cdot \bm{B}
 \end{equation}
-because the divergence of $\bm{B}$ equal to zero, so:
+Because the divergence of $\bm{B}$ is equal to zero, we have:
 \begin{equation}
 \nabla \bm{D} = \nabla \bm{E} - \frac{\alpha}{\uppi} (\nabla \cdot \theta) \bm{B} = 0.
 \end{equation}
-Comparing to the expression of $\bm{D}$, we see that a magnetic field $\bm{B}$ act like polarisation in a topological insulator. When the $\theta$ varies, we have a varying polarisation resulting in bound charge. Similarly, we define the magnetising field
+Comparing with the expression for $\bm{D}$, we see that a magnetic field $\bm{B}$ acts like a polarisation in a topological insulator. When $\theta$ varies, we obtain a spatially varying polarisation, which results in bound charge. Similarly, we define the magnetising field:
 \begin{equation}
 \bm{H} = \bm{B} + \frac{\alpha}{\uppi} \theta \cdot \bm{E}
 \end{equation}
@@ -342,7 +342,7 @@ Using the relationship between $\bm{B}$ and $\bm{E}$:
 \frac{\partial \bm{B}}{\partial t} + \nabla \times \bm{E} = 0
 \end{equation}
 
-so we can get:
+So we obtain:
 \begin{equation}
 \begin{aligned}
 \nabla \times \bm{H} &= \nabla \times \bm{B} + \frac{\alpha}{\uppi} [ (\nabla \theta) \times \bm{E} + \theta (\nabla \times \bm{E}) ] \\
@@ -350,7 +350,7 @@ so we can get:
 &= \frac{\partial \bm{D}}{\partial t}
 \end{aligned}
 \end{equation}
-In topological insulator, $\bm{E}$ act like magnetisation. When $\theta$ varies, we get a varying magnetisation which results in bound currents.
+In a topological insulator, $\bm{E}$ acts like a magnetisation. When $\theta$ varies, we obtain a spatially varying magnetisation, which results in bound currents.
 
 With these definitions, the equations of axion electrodynamics take the usual form of Maxwell equations in matter:
 \begin{equation}
@@ -363,7 +363,7 @@ With these definitions, the equations of axion electrodynamics take the usual fo
 \end{aligned}
 \right.
 \end{equation}
-This means that if we introduce the normal vector to the surface $\bm{\hat{n}}$, we have the boundary conditions:
+This means that if we introduce the surface normal vector $\bm{\hat{n}}$, we have the boundary conditions:
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -377,9 +377,9 @@ This means that if we introduce the normal vector to the surface $\bm{\hat{n}}$,
 
 \subsection{The Witten effect}
 
-The effect of the $\theta$ term is to endow the magnetic monopole with an electric charge, which is known as the Witten effect
+The effect of the $\theta$ term is to endow a magnetic monopole with an electric charge; this is known as the Witten effect.
 
-Let's take a magnetic monopole with magnetic charge $g$ and place in inside a vacuum ($\theta=0$). Then, we surround this with a medium that has $\theta = \Theta \neq 0$
+Let us take a magnetic monopole with magnetic charge $g$ and place it inside a vacuum ($\theta=0$). We then surround it with a medium that has $\theta = \Theta \neq 0$.
 
 When the magnetic field crosses the interface where $\theta$ changes, it will induce an electric charge:
 \begin{equation}
@@ -388,13 +388,13 @@ When the magnetic field crosses the interface where $\theta$ changes, it will in
 &\Rightarrow \quad Q \quad = \frac{\alpha}{\uppi} \Theta g
 \end{aligned}
 \end{equation}
-This result is independent of the size of the interior region whose $\theta$ is zero. So we could shrink this region down until it is infinitesimally small, and we still find that the monopole has charge $q$: In fact a monopole is a dyon which carries electric charge when $\theta$ not equal to zero.
+This result is independent of the size of the interior region where $\theta$ is zero. We could therefore shrink this region down until it is infinitesimally small, and we would still find that the monopole carries charge $q$. In fact, when $\theta$ is not equal to zero, a monopole is a dyon that carries both magnetic and electric charge.
 
 When the monopole carries the minimum allowed magnetic charge, its electric charge is given by:
 \begin{equation}
 g = \frac{2 \uppi}{e} \Rightarrow q = \frac{e \theta}{2 \uppi}
 \end{equation}
-In particular, if we place a magnetic monopole inside a topological insulator, it turns into a dyon which carries half the charge of the electron.
+In particular, if we place a magnetic monopole inside a topological insulator, it turns into a dyon that carries half the charge of an electron.
 
 We can also consider placing a monopole in a medium whose $\theta$ will gradually increase from zero. At the end of this process, the final electric field will be:
 \begin{equation}
@@ -407,11 +407,11 @@ We can also consider placing a monopole in a medium whose $\theta$ will graduall
 
 \subsection{A Mirage Monopole}
 
-let's consider that we take an electric charge $q$ and place it in the vacuum at point $\bm{x}=(0,0,d)$. the we fill the region where $z$ is less than zero with topological insulator. We can see that the effect produced by surface charge is equivalent to placing mirror dyons at point $\bm{x}=(0,0,d)$ and point $\bm{x}'=(0,0,-d)$.
+Let us consider an electric charge $q$ placed in the vacuum at the point $\bm{x}=(0,0,d)$. We then fill the region where $z$ is less than zero with a topological insulator. One finds that the effect produced by the surface charge is equivalent to placing mirror dyons at the points $\bm{x}=(0,0,d)$ and $\bm{x}'=(0,0,-d)$.
 
-We assume that the mirror dyon sitting at $\bm{x}=(0,0,d)$ with electric and magnetic charge $(q_1, g_1)$ and the mirror dyon sitting at $\bm{x}'=(0,0,-d)$ with electric and magnetic charge $(q_2, g_2)$.
+We assume that the mirror dyon at $\bm{x}=(0,0,d)$ has electric and magnetic charges $(q_1, g_1)$ and that the mirror dyon at $\bm{x}'=(0,0,-d)$ has electric and magnetic charges $(q_2, g_2)$.
 
-Next, we can write down:
+Next, we write:
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -421,7 +421,7 @@ Next, we can write down:
 \right.
 \end{equation}
 
-So the electric potential in the two regions is:
+The electric potential in the two regions is:
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -431,7 +431,7 @@ So the electric potential in the two regions is:
 \right.
 \end{equation}
 
-We only need to consider the electric and magnetic field in yz plane because of symmetry, where $z$ equal to zero
+By symmetry, we only need to consider the electric and magnetic fields in the $yz$ plane at $z=0$.
 \begin{equation}
     \left\{
     \begin{aligned}
@@ -456,12 +456,12 @@ Using the boundary conditions:
 \bm{\hat{n}} \times \bm{E} = 0
 \end{equation}
 
-so we can get the equation:
+So we obtain:
 \begin{equation}
 E_y^+ = E_y^- \Rightarrow q_1 = q_2 = q'
 \end{equation}
 
-Also, we can perform the same operation on the magnetic field;
+We can perform the same procedure for the magnetic field.
 The magnetic scalar potential is:
 \begin{equation}
 \left\{
@@ -472,7 +472,7 @@ The magnetic scalar potential is:
 \right.
 \end{equation}
 
-So the magnetic field on yz plane where $z$ equal to zero:
+Thus, the magnetic field in the $yz$ plane at $z=0$ is:
 \begin{equation}
     \left\{
     \begin{aligned}
@@ -497,7 +497,7 @@ Using the boundary conditions:
 \bm{\hat{n}} \cdot \bm{B} = 0 \Rightarrow B_z^- = B_z^+ \Rightarrow g_2 = -g_1 = g
 \end{equation}
 
-From the expression above, we can get the electric displacement:
+From the expression above, we obtain the electric displacement:
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -527,7 +527,7 @@ Using the boundary condition:
 \nabla \times \bm{H} = 0 \Rightarrow H_y^+ = H_y^- \Rightarrow g = \frac{\alpha(q+q')}{2}
 \end{equation}
 
-Finally, we can get the electric and magnetic charges carried by these dyons:
+Finally, we obtain the electric and magnetic charges carried by these dyons:
 \begin{equation}
 \left\{
 \begin{aligned}

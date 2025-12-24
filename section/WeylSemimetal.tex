@@ -1,32 +1,32 @@
 \section{Weyl semimetals}
 
-The Weyl semimetals have nondegenerate gapless linear dispersions around band touching points (Weyl nodes). The low-energy effective Hamiltonian around a Weyl node is written as:
+Weyl semimetals have nondegenerate, gapless linear dispersions around band-touching points (Weyl nodes). The low-energy effective Hamiltonian around a Weyl node can be written as:
 \begin{equation}
 H_W(\bm{k}) = Q v_F \bm{k} \cdot \bm{\sigma}
 \end{equation}
-where $Q=\pm 1$ indicates the chirality, $v_F$ is the Fermi velocity and $\sigma_i$ are Pauli matrices. Because the sum of chiralities of Weyl nodes in a system must be zero, the simplest realization of a Weyl semimetal is one with two Weyl nodes of opposite chiralities. Note that the minimal number of Weyl nodes in Weyl semimetal with broken inversion symmetry is four, while it is two in Weyl semimetals with broken time-reversal symmetry.
+where $Q=\pm 1$ indicates the chirality, $v_F$ is the Fermi velocity, and $\sigma_i$ are Pauli matrices. Because the sum of chiralities of Weyl nodes in a system must be zero, the simplest realization of a Weyl semimetal contains two Weyl nodes of opposite chirality. Note that the minimal number of Weyl nodes in a Weyl semimetal with broken inversion symmetry is four, whereas it is two in Weyl semimetals with broken time-reversal symmetry.
 
-Now, let's consider a $4\times 4$ continuum model Hamiltonian for two-node Weyl semimetals with broken time-reversal symmetry:
+Now, let us consider a $4\times 4$ continuum-model Hamiltonian for two-node Weyl semimetals with broken time-reversal symmetry:
 \begin{equation}
 H_0(\bm{k}) = v_F (\tau_z \otimes \bm{k} \cdot \bm{\sigma} + \Delta \tau_x \otimes \mathbb{I} + \mathbb{I} \otimes \bm{b} \cdot \bm{\sigma})
 \end{equation}
-where $\tau_i$ and $\sigma_i$ are Pauli matrices for Weyl-node and spin degrees of freedom respectively and $\Delta$ is the mass of 3D Dirac fermions. The term $\bm{b} \cdot \bm{\sigma}$ represents a magnetic interaction such as exchange interaction between conduction electrons and magnetic impurities or the Zeeman coupling with an external magnetic field. Note the Hamiltonian with $\bm{b}=0$ describes a topological or normal insulator depending on the sign of $\Delta$ (mass). Without loss of generality, we may set $\bm{b}=(0,0,b)$.
+where $\tau_i$ and $\sigma_i$ are Pauli matrices for the Weyl-node and spin degrees of freedom, respectively, and $\Delta$ is the mass of 3D Dirac fermions. The term $\bm{b} \cdot \bm{\sigma}$ represents a magnetic interaction, such as exchange coupling between conduction electrons and magnetic impurities, or Zeeman coupling to an external magnetic field. Note that the Hamiltonian with $\bm{b}=0$ describes a topological or normal insulator depending on the sign of $\Delta$ (the mass). Without loss of generality, we set $\bm{b}=(0,0,b)$.
 
-Now let's find the location of Weyl nodes. The Hamiltonian of Weyl nodes can be written as:
+Next, let us find the locations of the Weyl nodes. The Hamiltonian can be written as:
 \begin{equation}
 \begin{aligned}
 H &= v_F \tau_z (k_x \sigma_x + k_y \sigma_y + k_z \sigma_z) + \Delta \tau_x \otimes \mathbb{I} + b \mathbb{I} \otimes \sigma_z \\
 &= \underbrace{v_F \tau_z \otimes (k_x \sigma_x + k_y \sigma_y)}_{H_\perp} + \underbrace{v_F \tau_z \otimes k_z \sigma_z + \Delta \tau_x \otimes \mathbb{I} + b \mathbb{I} \otimes \sigma_z}_{H_\parallel}
 \end{aligned}
 \end{equation}
-Because $H_\perp$ and $H_\parallel$ anticommute, so we can write down:
+Because $H_\perp$ and $H_\parallel$ anticommute, we have:
 \begin{equation}
 \begin{aligned}
 H^2 &= H_\perp^2 + H_\parallel^2 + \{H_\perp, H_\parallel\} \\
 &= H_\perp^2 + H_\parallel^2
 \end{aligned}
 \end{equation}
-This leads to the explicit energy spectrum:
+This leads to the energy spectrum:
 \begin{equation}
 E^2 = v_F^2 (k_x^2 + k_y^2) + E_\parallel^2
 \end{equation}
@@ -37,11 +37,11 @@ h_{eff} &= s(k_z \tau_z + b) + \Delta \tau_x \\
 &= s k_z \cdot \tau_z + \Delta \tau_x + s b \mathbb{I}
 \end{aligned}
 \end{equation}
-where $s=\pm 1$. So the energy spectrum of $h_{eff}$ is given by:
+where $s=\pm 1$. The energy spectrum of $h_{eff}$ is then:
 \begin{equation}
 E_\parallel = s b \pm \sqrt{k_z^2 + \Delta^2}
 \end{equation}
-So the Weyl node location satisfies:
+Therefore, the Weyl-node locations satisfy:
 \begin{equation}
     \left\{
     \begin{aligned}
@@ -56,11 +56,11 @@ Thus, the coordinates of the Weyl nodes are:
 \end{equation}
 which requires $b^2 > \Delta^2$.
 
-And then we derive the $\theta$ term of Weyl semimetals from the microscopic four-band model. In order to describe a more generic Weyl semimetal, we add the term $\mu_5 \tau_z$ to the Hamiltonian which generates a chemical potential difference $2\mu_5$ between the two Weyl nodes. We also set $\Delta=0$ for simplicity. So the Hamiltonian can be written as:
+We now derive the $\theta$ term of Weyl semimetals from the microscopic four-band model. To describe a more generic Weyl semimetal, we add the term $\mu_5 \tau_z$ to the Hamiltonian, which generates a chemical-potential difference $2\mu_5$ between the two Weyl nodes. We also set $\Delta=0$ for simplicity. The Hamiltonian can then be written as:
 \begin{equation}
 H_0' = v_F (\tau_z \otimes \bm{\sigma} \cdot \bm{k} + \mathbb{I} \otimes \bm{\sigma} \cdot \bm{b}) - \mu_5 \tau_z \otimes \mathbb{I}
 \end{equation}
-We rewrite the Hamiltonian with Gamma matrices.
+We rewrite the Hamiltonian using Gamma matrices.
 
 \begin{equation}
 \left\{
@@ -76,7 +76,7 @@ and we set $v_F \approx c = 1$, so:
 \begin{equation}
 H = - \gamma^0 \gamma^i k_i + \gamma^0 \gamma^i \gamma^5 b_i - \mu_5 \gamma^5
 \end{equation}
-The action of the system in the presence of external electric and magnetic fields with the four potential $A_\mu = (A_0, -\bm{A})$ is given by
+The action of the system in the presence of external electric and magnetic fields, with the four-potential $A_\mu = (A_0, -\bm{A})$, is given by:
 \begin{equation}
 \begin{aligned}
 S &= \int \mathrm{d}t \mathrm{d}^3x \, \psi^\dagger [\mathrm{i}(\partial_t - \mathrm{i} e A_0) - H_0'(\bm{k}+e\bm{A})] \\
@@ -86,9 +86,9 @@ S &= \int \mathrm{d}t \mathrm{d}^3x \, \psi^\dagger [\mathrm{i}(\partial_t - \ma
 &= \int \mathrm{d}t \mathrm{d}^3x \, \bar{\psi} \mathrm{i} \gamma^\mu (\partial_\mu - \mathrm{i} e A_\mu - \mathrm{i} b_\mu \gamma^5) \psi
 \end{aligned}
 \end{equation}
-where $e>0$, $\psi$ is a four-component spinor, $\bar{\psi} = \psi^\dagger \gamma^0$.
+where $e>0$, $\psi$ is a four-component spinor, and $\bar{\psi} = \psi^\dagger \gamma^0$.
 
-Now we apply Fujikawa's method to the action. Performing an infinitesimal gauge transformation for infinite times such that:
+Now we apply Fujikawa's method to the action. We perform an infinitesimal chiral transformation repeatedly such that:
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -97,18 +97,18 @@ Now we apply Fujikawa's method to the action. Performing an infinitesimal gauge 
 \end{aligned}
 \right.
 \end{equation}
-with $\theta(\bm{r},t) = 2 x^\mu b_\mu = 2(\bm{b} \cdot \bm{r} - \mu_5 t)$ and $\phi \in [0, 1]$, then the partition function $Z$ is transformed as:
+with $\theta(\bm{r},t) = 2 x^\mu b_\mu = 2(\bm{b} \cdot \bm{r} - \mu_5 t)$ and $\phi \in [0, 1]$. The partition function $Z$ is then transformed as:
 \begin{equation}
 \begin{aligned}
 Z &= \int D[\psi, \bar{\psi}] \mathrm{e}^{\mathrm{i}S[\psi, \bar{\psi}]} \\
 \Rightarrow Z' &= \int D[\psi', \bar{\psi}'] \mathrm{e}^{\mathrm{i}S[\psi', \bar{\psi}']}
 \end{aligned}
 \end{equation}
-Because the anticommutation relation $\{\gamma^\mu, \gamma^5\} = 0$ is satisfied, so:
+Because the anticommutation relation $\{\gamma^\mu, \gamma^5\} = 0$ holds, we have:
 \begin{equation}
 \mathrm{e}^{\frac{-\mathrm{i}\theta(\bm{r},t)\gamma^5 \mathrm{d}\phi}{2}} \gamma^\mu = \gamma^\mu \mathrm{e}^{\frac{\mathrm{i}\theta(\bm{r},t)\gamma^5 \mathrm{d}\phi}{2}}
 \end{equation}
-The Lagrangian of $S[\psi', \bar{\psi}']$ can be written as:
+The Lagrangian density of $S[\psi', \bar{\psi}']$ can be written as:
 \begin{equation}
 \begin{aligned}
 \mathcal{L} &= \bar{\psi} \mathrm{e}^{-\frac{\mathrm{i}\theta(\bm{r},t)\gamma^5 \mathrm{d}\phi}{2}} \cdot \mathrm{i} \gamma^\mu (\partial_\mu - \mathrm{i} e A_\mu - \mathrm{i} b_\mu \gamma^5) \mathrm{e}^{-\frac{\mathrm{i}\theta(\bm{r},t)\gamma^5 \mathrm{d}\phi}{2}} \psi \\
@@ -116,19 +116,19 @@ The Lagrangian of $S[\psi', \bar{\psi}']$ can be written as:
 &= \bar{\psi} \mathrm{i} \gamma^\mu (\partial_\mu - \mathrm{i} e A_\mu) \psi - \bar{\psi} \mathrm{i} \gamma^\mu (1 - \mathrm{d}\phi) \mathrm{i} b_\mu \gamma^5 \psi
 \end{aligned}
 \end{equation}
-And the Jacobian $J$ of transformation of $D[\psi', \bar{\psi}'] = J D[\psi, \bar{\psi}]$ is given by:
+The Jacobian $J$ of the transformation, defined by $D[\psi', \bar{\psi}'] = J D[\psi, \bar{\psi}]$, is given by:
 \begin{equation}
 \ln J = \mathrm{i} \mathrm{d}\phi \int \mathrm{d}t \mathrm{d}^3x \frac{e^2}{16\pi^2} \cdot \theta(\bm{r}, t) \cdot {}^*F^{\mu\nu} F_{\mu\nu}
 \end{equation}
-We integrate with respect to the variable $\phi$ from 0 to 1. Due to the invariance of the partition function, we arrive at the following expression of $S$:
+We integrate with respect to the variable $\phi$ from 0 to 1. Due to the invariance of the partition function, we arrive at the following expression for $S$:
 \begin{equation}
 S = \int \mathrm{d}t \mathrm{d}^3x \, \bar{\psi} \mathrm{i} \gamma^\mu (\partial_\mu - \mathrm{i} e A_\mu) \psi + \frac{e^2}{16\pi^2} \int \mathrm{d}t \mathrm{d}^3x \, \theta(\bm{r},t) {}^*F^{\mu\nu} F_{\mu\nu}
 \end{equation}
-where the first term represents the trivial action of massless Dirac fermions and the second term is the $\theta$ term with $\theta(\bm{r},t) = 2(\bm{b} \cdot \bm{r} - \mu_5 t)$.
+where the first term represents the (trivial) action of massless Dirac fermions, and the second term is the $\theta$ term with $\theta(\bm{r},t) = 2(\bm{b} \cdot \bm{r} - \mu_5 t)$.
 
 \subsection{Anomalous Hall effect and negative magnetoresistance}
 
-Let's consider the consequences of the presence of a $\theta$ term in Weyl semimetals. As we have also seen in the case of insulators with a dynamical axion field, an electric current is induced in the presence of a $\theta$ term. The induced electric current density and charge density are given by:
+Let us consider the consequences of the presence of a $\theta$ term in Weyl semimetals. As we also saw for insulators with a dynamical axion field, an electric current is induced in the presence of a $\theta$ term. The induced current density and charge density are given by:
 \begin{equation}
 \left\{
 \begin{aligned}
@@ -138,29 +138,29 @@ Let's consider the consequences of the presence of a $\theta$ term in Weyl semim
 \right.
 \end{equation}
     
-In the present case of $\theta(\bm{r}, t) = 2(\bm{b} \cdot \bm{r} - \mu_5 t)$, we readily obtain a static current of the form:
+In the present case $\theta(\bm{r}, t) = 2(\bm{b} \cdot \bm{r} - \mu_5 t)$, we readily obtain a static current of the form:
 \begin{equation}
 \bm{j} = \frac{2\alpha}{\pi} (\mu_5 \bm{B} - \bm{b} \times \bm{E})
 \end{equation}
-The second term is the anomalous Hall effect. Let's consider a 2D plane which is perpendicular to $\bm{b}$. And we set $\bm{b}=(0,0,b)$, which gives the 3D Hall conductivity as:
+The second term corresponds to the anomalous Hall effect. Consider a 2D plane perpendicular to $\bm{b}$. Setting $\bm{b}=(0,0,b)$, we obtain the 3D Hall conductivity:
 \begin{equation}
 \sigma_{xy}^{3D} = \frac{2\alpha b}{\pi}
 \end{equation}
-The first term is the chiral magnetic effect. The chiral magnetic effect indicates that a direct current is generated along a static magnetic field even in the absence of electric fields, when there exists a chemical potential difference $\delta\mu=2\mu_5$ between the two Weyl nodes. However, the existence of the static chiral magnetic effect is ruled out in crystalline solid. But the chiral magnetic effect can be realized under nonequilibrium circumstance when the system is driven from equilibrium by the combined effect of electric and magnetic fields. In this case of Weyl semimetal potential difference can be generated by the chiral anomaly. The chiral anomaly in weyl semimetals is referred to as the electron number nonconservation in a given weyl cone under parallel electric and magnetic fields in which the rate of pumping of electrons is given by:
+The first term corresponds to the chiral magnetic effect. It indicates that a direct current is generated along a static magnetic field even in the absence of an electric field, provided there exists a chemical-potential difference $\delta\mu=2\mu_5$ between the two Weyl nodes. However, an equilibrium (static) chiral magnetic effect is ruled out in crystalline solids. It can nevertheless be realized out of equilibrium, when the system is driven away from equilibrium by the combined effect of electric and magnetic fields. In this case, a chemical-potential difference can be generated by the chiral anomaly. The chiral anomaly in Weyl semimetals refers to the nonconservation of electron number in a given Weyl cone under parallel electric and magnetic fields; the rate of pumping of electrons is given by:
 \begin{equation}
 \frac{\partial N_i}{\partial t} = Q_i \frac{\alpha}{\pi} \bm{E} \cdot \bm{B}
 \end{equation}
-where $i$ is a valley (Weyl node) index and
+where $i$ is a valley (Weyl node) index, and
 \begin{equation}
 Q_i = \int \frac{\mathrm{d}^3k}{2\pi} \cdot \frac{\partial f_0(\mathcal{E}_{\bm{k}}^m)}{\partial \mathcal{E}_{\bm{k}}^m} \cdot \bm{v}_{\bm{k}}^m \cdot \bm{\Omega}_{\bm{k}}^m
 \end{equation}
-is the chirality of the valley. Here, $\mathcal{E}_{\bm{k}}^m$ is the energy of Bloch electrons with momentum $\bm{k}$ in band $m$ in a given valley $i$, $f_0(\mathcal{E}_{\bm{k}}^m)$ is the Fermi distribution function. $\bm{v}_{\bm{k}}^m$ is the group velocity and $\bm{\Omega}_{\bm{k}}^m$ is the Berry curvature. So the difference of the total electron number between the weyl nodes leads to the difference of the chemical potential between weyl nodes.
+is the chirality of the valley. Here, $\mathcal{E}_{\bm{k}}^m$ is the energy of Bloch electrons with momentum $\bm{k}$ in band $m$ in valley $i$, and $f_0(\mathcal{E}_{\bm{k}}^m)$ is the Fermi distribution function. $\bm{v}_{\bm{k}}^m$ is the group velocity and $\bm{\Omega}_{\bm{k}}^m$ is the Berry curvature. Therefore, a difference in the total electron number between the Weyl nodes leads to a difference in the chemical potential between the nodes.
 
-A phenomenon manifested by the chiral anomaly is a negative magnetoresistance:
+One phenomenon associated with the chiral anomaly is negative magnetoresistance:
 \begin{equation}
 \sigma_{zz} = \frac{\alpha}{\pi} \frac{(e B_z)^2 v_F^3}{\mu^2} \tau_{\mathrm{inter}}
 \end{equation}
-where $\mu$ is the equilibrium chemical potential and $\tau_{\mathrm{inter}}$ is the intervalley scattering time. This unusual magnetoconductivity holds in the low-field limit $B_z \to 0$. So the expressing of $\bm{j}$ is understood as coming from
+where $\mu$ is the equilibrium chemical potential and $\tau_{\mathrm{inter}}$ is the intervalley scattering time. This unusual magnetoconductivity holds in the low-field limit $B_z \to 0$. The expression for $\bm{j}$ can be understood as coming from:
 \begin{equation}
 \bm{j} \propto (\bm{E} \cdot \bm{B} \tau_{\mathrm{inter}}) \cdot \bm{B}
 \end{equation}
